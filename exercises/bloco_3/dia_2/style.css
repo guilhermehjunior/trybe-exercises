@@ -1,13 +1,40 @@
-h1 {
+body{
+    font-size: 16px;
+}
+
+h1{
     font-size: 65px;
     color:orange;
+    font-family: sans-serif;
 
+}
+
+p{
+    font-weight: 600;
+    font-size: 3em;
 }
 
 ul{
     background-color: palegoldenrod;
+    font-style: italic;
+    line-height: 80px;
+    text-align: right;
+    text-decoration: line-through;
+    
 }
 
 .color{
     background-color: green;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#red{
+    background-color: red;
+}
+
+#brown{
+    background-color: brown;
 }
