@@ -1,0 +1,15 @@
+h1, p{
+    text-align: center;
+}
+
+.lista-sites:hover{
+    background-color: blueviolet;
+}
+
+.lista-sites li:active{
+    color:cyan;
+}
+
+.lista-sites,.lista-motivos{
+    list-style: none;
+}
