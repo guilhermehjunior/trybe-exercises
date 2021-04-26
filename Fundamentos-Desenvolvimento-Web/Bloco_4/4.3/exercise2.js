@@ -7,4 +7,4 @@ let asteriscos="";
 for (let row = 1; row<=n; row+=1){
     asteriscos+= "*";
     console.log(asteriscos);
-}
+};
