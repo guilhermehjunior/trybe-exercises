@@ -54,7 +54,7 @@
 
         twoYears("p");
 
-// 2- Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+//  2- Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
 
         function yellowToGreen(element, color) {
             const elemento = document.getElementsByClassName(element);
@@ -63,7 +63,7 @@
 
         yellowToGreen("main-content", "rgb(76,164,109)");
 
-// 3- Crie uma função que mude a cor do quadrado vermelho para branco.
+//  3- Crie uma função que mude a cor do quadrado vermelho para branco.
 
         function redToWhite(element, color) {
             const elemento = document.getElementsByClassName(element);
@@ -79,7 +79,17 @@
         }
 
         correctingText("h1","Exercício 5.1 - Java Script");
-//  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+
+//  5-  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+
+        function upperCase(element) {
+            const elemento = document.getElementsByTagName(element);
+            for (let index = 0; index < elemento.length; index += 1){
+                elemento[index].style.textTransform = "uppercase";
+            }
+        }
+
+        upperCase("p");
 //  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         
     </script>
