@@ -36,6 +36,7 @@
         <p>Texto padrão do nosso site</p>
         <p>-----</p>
         <p>Trybe</p>
+        <p>testando tamanho</p>
       </div>
     </div>
     <script>
@@ -90,7 +91,17 @@
         }
 
         upperCase("p");
-//  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+
+//  6-  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        function printingP(element) {
+            const elemento = document.getElementsByTagName(element);
+            for (let index = 0; index < elemento.length; index += 1){
+                console.log(elemento[index]);
+            }
+        }
+
+        printingP("p");
+
         
     </script>
   </body>
