@@ -34,12 +34,12 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4-2: _JavaScript - Array e loop For_
 - [X] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [X] 4-4: _JavaScript - Objetos e funções_
-- [ ] 4-5: _[Projeto - Playground Functions]()_
+- [X] 4-5: _[Projeto - Playground Functions]()_
 
 ##### Bloco 5: JavaScript: DOM, Eventos e Web Storage
 
-- [ ] 5-1: _JavaScript - DOM e seletores_
-- [ ] 5-2: _JavaScript - Trabalhando com elementos_
+- [X] 5-1: _JavaScript - DOM e seletores_
+- [X] 5-2: _JavaScript - Trabalhando com elementos_
 - [ ] 5-3: _JavaScript - Eventos_
 - [ ] 5-4: _JavaScript - Web Storage_
 - [ ] 5-5: _[Projeto - Meme Generator]()_
@@ -61,7 +61,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [ ] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [ ] 7-2: _JavaScript ES6 - Objects_
-- [ ] 7-3: _Testes unitÃ¡rios em JavaScript_
+- [ ] 7-3: _Testes unitarios em JavaScript_
 - [ ] 7-4: _[Projeto - JavaScript Testes UnitÃ¡rios]()_
 
 ##### Bloco 8: JavaScript ES6
