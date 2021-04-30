@@ -63,6 +63,28 @@
     const mainTitle = document.createElement('h1');
     mainTitle.innerHTML = 'Exercício 5.2 - JavaScript';
     document.body.appendChild(mainTitle);
+
+    //2-Adicione a tag div com a classe main-content como filho da tag body ;
+
+    const mainContent = document.createElement('div');
+    mainContent.classList.add('main-content');
+    document.body.appendChild(mainContent);
+
+    //3- Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+    const centerContent = document.createElement('div');
+    centerContent.classList.add('center-content');
+    // centerContent.innerHTML = '<p>Exercicio 4</p>'
+    mainContent.appendChild(centerContent);
+
+    //4-Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+    const firstParagraph = document.createElement('p');
+    firstParagraph.innerHTML = 'Exercicio 4 no momento';
+    centerContent.appendChild(firstParagraph);
+
+    //5-Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+    const leftContent = document.createElement('div');
+    leftContent.classList.add('left-content');
+    mainContent.appendChild(leftContent);
     </script>
   </body>
 </html>
