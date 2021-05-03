@@ -135,3 +135,12 @@ for (let index = 0; index < dezDaysList.length; index += 1) {
 
     addingSubtitles('red');
 
+// 9 - Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+// Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+    const tarefaSelecionada = document.querySelector('.task');
+
+    tarefaSelecionada.addEventListener('click', function (event) {
+        event.target.classList.toggle('task-selected');
+        event.target.classList.toggle('task');
+    })
