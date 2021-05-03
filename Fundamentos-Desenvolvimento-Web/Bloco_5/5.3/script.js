@@ -152,23 +152,27 @@ function createDaysOfTheWeek() {
 // Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
 
     const tarefaSelecionada = document.querySelector('.task');
-
-    tarefaSelecionada.addEventListener('click', function (event) {
-        event.target.classList.toggle('task-selected');
-        event.target.classList.toggle('task');
-    });
-
+    function selectingTask() {
+        tarefaSelecionada.addEventListener('click', function (event) {
+            event.target.classList.toggle('selected');
+        });
+    }
+    
+    selectingTask();
 // 10 - Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
 // Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
 
-
-    for (let index = 0; index < dezDaysList.length; index += 1) {
-    numeroDias[index].addEventListener('click', function (event){
-        const taskSelected = document.querySelector('.task-selected');
-        if (taskSelected !== null) {
-            event.target.style.color = taskSelected.style.backgroundColor;
-        } else {
-            event.target.style.color = 'rgb(119,119,119)';
-        }
-    });
+    function selectiongTaskDays() {
+        for (let index = 0; index < dezDaysList.length; index += 1) {
+        numeroDias[index].addEventListener('click', function (event){
+            const taskSelected = document.querySelector('.selected');
+            if (taskSelected !== null) {
+                event.target.style.color = taskSelected.style.backgroundColor;
+            } else {
+                event.target.style.color = 'rgb(119,119,119)';
+            }
+        });
+        }    
     }
+
+    selectiongTaskDays();
