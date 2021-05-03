@@ -55,9 +55,22 @@ for (let index = 0; index < dezDaysList.length; index += 1) {
 // É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
 
     const feriadosButtons = document.querySelector('#btn-holiday');
-    feriadosButtons.addEventListener('click', function (event) {
+    feriadosButtons.addEventListener('click', function () {
         const feriados = document.querySelectorAll('.holiday');
         feriados.forEach(element => {
             element.classList.toggle('pink');
         });
     });
+
+// 4-   Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+// Adicione a este botão o ID "btn-friday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+    function buttonSextaFeira(string) {
+        const fridayButton = document.createElement('button');
+        fridayButton.id = 'btn-friday';
+        fridayButton.innerText = string;
+        buttonContainer.appendChild(fridayButton);
+    }
+
+    buttonSextaFeira('Sexta-Feira');
