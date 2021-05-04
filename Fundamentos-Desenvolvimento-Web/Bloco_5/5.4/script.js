@@ -66,4 +66,13 @@ minus.addEventListener('click', function () {
 
 main.style.lineHeight  = localStorage.getItem('font-height');
 
+const button = document.querySelector('#btn');
+const input = document.querySelector('#text-size');
+button.addEventListener('click', function () {
+    localStorage.setItem ('font-size', `${input.value}px`);
+    main.style.fontSize = localStorage.getItem('font-size');
+});
+
+main.style.fontSize = localStorage.getItem('font-size');
+
 }
