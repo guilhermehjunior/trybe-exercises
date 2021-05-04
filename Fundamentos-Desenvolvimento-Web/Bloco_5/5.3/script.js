@@ -176,3 +176,31 @@ function createDaysOfTheWeek() {
     }
 
     selectiongTaskDays();
+
+//     Bônus:
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+// Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+// Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+// Dica - Propriedade: keyCode .
+    function addingCompromissos(){
+        const botaoCompromissos = document.querySelector('#btn-add');
+        const inputCompromissos = document.querySelector('#task-input');
+        const listaCompriomissos = document.querySelector('.task-list');
+
+        botaoCompromissos.addEventListener('click', function () {
+            if (inputCompromissos.value === '') return alert('Erro');
+            const newElement = document.createElement('li');
+            newElement.innerText = inputCompromissos.value;
+            listaCompriomissos.appendChild(newElement);
+        });
+
+        inputCompromissos.addEventListener('keyup', function (event) {
+            if (inputCompromissos.value === '') return alert('Erro');
+            const newElement = document.createElement('li');
+            let keyCode = event.keyCode;
+            if (keyCode === 13) newElement.innerText = inputCompromissos.value;
+            listaCompriomissos.appendChild(newElement);
+        });
+    }
+    
+    addingCompromissos();
