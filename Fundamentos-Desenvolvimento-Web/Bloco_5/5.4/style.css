@@ -1,11 +1,21 @@
 
 header ul, header div {
     display: inline-block;
+    margin-right: 15px;
+    width: 15%;
 }
 
 header li:hover {
     font-weight: bold;
     cursor: pointer;
+}
+
+header input:hover {
+    border: 2px solid black;
+}
+
+input{
+    width: 40px;
 }
 
 #main-title{
