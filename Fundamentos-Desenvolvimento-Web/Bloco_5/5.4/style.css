@@ -1,7 +1,11 @@
 
-
 header ul, header div {
     display: inline-block;
+}
+
+header li:hover {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 #main-title{
@@ -42,3 +46,4 @@ header ul, header div {
 .teste {
     clear:both;
 }
+
