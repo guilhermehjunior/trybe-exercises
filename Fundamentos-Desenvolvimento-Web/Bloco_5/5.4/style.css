@@ -1,0 +1,74 @@
+
+header div ul, header div div, header div p {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    margin: 0 15px 0 0;
+}
+
+header div p {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+header div ul {
+    list-style-type:none;
+    padding: 0;
+}
+
+header li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header input:hover {
+    border: 2px solid black;
+}
+
+input{
+    width: 40px;
+}
+
+label {
+    display: none;
+}
+
+#main-title{
+    text-align: center;
+}
+
+#second-title{
+    text-align: left;
+    font-size: 0.85em;
+    font-weight: 200;
+    text-align: center;
+}
+
+#third-title{
+    text-align: left;
+    font-size: 0.75em;
+    font-weight: 200;
+    text-align: center;
+}
+
+#main-content{
+    display: block;
+    text-align: left;
+}
+
+.content {
+    width: 45%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float:right;
+}
+
+.teste {
+    clear:both;
+}
+
