@@ -49,7 +49,13 @@ helvetica.addEventListener('click', function () {
 
 main.style.fontFamily = localStorage.getItem('font-family');
 
-let tamanho = parseInt(localStorage.getItem('font-height'));
+
+let tamanho;
+if (localStorage.getItem('font-height') !== Number ){
+     tamanho = 100;
+} else {
+     tamanho = parseInt(localStorage.getItem('font-height'));
+}
 const plus = document.querySelector('#plus');
 plus.addEventListener('click', function () {
     tamanho = parseInt(tamanho) + 25;
