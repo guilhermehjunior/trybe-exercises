@@ -44,7 +44,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-4: _JavaScript - Web Storage_
 - [ ] 5-5: _[Projeto - Meme Generator]()_
 - [X] 5-6: _[Projeto - Arte com Pixels](https://guilhermehjunior.github.io/PixelArt/)_
-- [ ] 5-7: _[Projeto - Lista de tarefas]()_
+- [X] 5-7: _[Projeto - Lista de tarefas](https://guilhermehjunior.github.io/ToDoList/)_
 - [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
 - [ ] 5-7: _[Projeto - Carta Misteriosa]()_
 
