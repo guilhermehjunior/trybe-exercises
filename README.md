@@ -42,10 +42,10 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-2: _JavaScript - Trabalhando com elementos_
 - [X] 5-3: _JavaScript - Eventos_
 - [X] 5-4: _JavaScript - Web Storage_
-- [ ] 5-5: _[Projeto - Meme Generator]()_
+- [X] 5-5: _[Projeto - Meme Generator](https://guilhermehjunior.github.io/MemeGenerator/)_
 - [X] 5-6: _[Projeto - Arte com Pixels](https://guilhermehjunior.github.io/PixelArt/)_
 - [X] 5-7: _[Projeto - Lista de tarefas](https://guilhermehjunior.github.io/ToDoList/)_
-- [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
+- [X] 5-7: _[Projeto - Adivinhe a Cor](https://guilhermehjunior.github.io/AdivinhaCor/)_
 - [ ] 5-7: _[Projeto - Carta Misteriosa]()_
 
 ##### Bloco 6: HTML & CSS avançado
@@ -249,7 +249,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 36: Python
 
 - [ ] 35-1: _Aprendendo Python_
-- [ ] 35-2: _Testes e ExceÃ§Ãµes_
+- [ ] 35-2: _Testes e Excecoes_
 - [ ] 35-3: _Entrada e SaÃ­da de dados_
 - [ ] 36-4: _Entrada e SaÃ­da de dados_
 - [ ] 35-5: _[Projeto - Tech news]()_
