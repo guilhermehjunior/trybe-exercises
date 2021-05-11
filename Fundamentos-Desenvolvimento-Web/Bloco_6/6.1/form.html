@@ -8,7 +8,38 @@
   <title>Document</title>
 </head>
 <body>
+  <header>
+    <h1>Cadastre seu currículo</h1>
+    <p>Preencha o Formulário abaixo:</p>
+  </header>
+  <form action="" method="GET" id="forms">
+    <fieldset id="campo-dados-pessoais">
+      <legend>Dados Pessoais</legend>
+      <label for="name-input">Nome:
+        <input type="text" name="nome" id="name-input" maxlength="40" required>
+      </label>
+      <label for="email-input">Email:
+        <input type="email" name="email" id="email-input" maxlength="50" required>
+      </label>
+      <label for="cpf-input">CPF:
+        <input type="text" name="cpf" id="cpf-input" maxlength="11" required>
+      </label>
+      <label for="adress-input">Endereço:
+        <input type="text" name="endereco" id="adress-input" maxlength="200" required>
+      </label>
+      <label for="city-input">Cidade:
+        <input type="text" name="cidade" id="city-input" maxlength="28" required>
+      </label>
+      <label for="state-select">Estado:
+        <select name="estado" id="state-select" required></select>
+      </label>
+      <input type="radio" name="moradia" id="house-radio" checked>
+      <label for="house-radio">Casa</label>
+      <input type="radio" name="moradia" id="apt-radio">
+      <label for="apt-radio">Apartamento</label>
 
+    </fieldset>
+  </form>
   <script src="script.js"></script>
 </body>
 </html>
