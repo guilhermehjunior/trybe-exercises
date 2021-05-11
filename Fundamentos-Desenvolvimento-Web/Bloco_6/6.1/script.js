@@ -1,4 +1,6 @@
 const listaEstados = document.querySelector('#state-select');
+const data = document.querySelector('#data-inicio-input');
+const button = document.querySelector('button');
 const estados = [
   'AC - Acre',
   'AL - Alagoas',
@@ -36,3 +38,30 @@ window.onload = () => {
     listaEstados.appendChild(estado);
   }
 };
+
+// ideia de https://www.guj.com.br/t/resolvido-como-validar-data-com-java-script/276656
+function validarData() {
+  let formatoValido = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;;
+  if(!formatoValido.test(data.value)) {
+    alert('Formato de data incorreto');
+  } else {
+    const dia = data.value.split('/')[0];
+    const mes = data.value.split('/')[1];
+    const ano = data.value.split('/')[2];
+
+    if (dia > 31 || dia < 0) {
+      alert('Dia incorreto');
+    }
+    if ( mes > 12 || dia < 0) {
+      alert('Mes incorreto');
+    }
+    if (ano < 0) {
+      alert ('Ano incorreto');
+    }
+  }
+}
+
+button.addEventListener('click', () => {
+  console.log(data.value)
+  validarData();
+});
