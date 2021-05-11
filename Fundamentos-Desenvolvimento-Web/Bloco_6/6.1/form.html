@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+  <title>Exercicio 6.1</title>
 </head>
 <body>
   <header>
@@ -37,9 +37,24 @@
       <label for="house-radio">Casa</label>
       <input type="radio" name="moradia" id="apt-radio">
       <label for="apt-radio">Apartamento</label>
-
+    </fieldset>
+    <fieldset>
+      <legend>Dados de Emprego</legend>
+      <label for="text-area-cv">Resumo do currículo
+        <textarea name="cv" id="text-area-cv" cols="30" rows="10" required maxlength="1000"></textarea>
+      </label>
+      <label for="cargo-input"> Cargo
+        <input type="text" name="cargo" id="cargo-input" maxlength="40" required>
+      </label>
+      <label for="descricao-cargo-input">Descricao do Cargo
+        <input type="text" name="descricao-cargo" id="descricao-cargo-input" maxlength="500" required>
+      </label>
+      <label for="data-inicio-input">
+        <input type="text" name="data-inicio" id="data-inicio-input" required maxlength="10">
+      </label>
     </fieldset>
   </form>
+  <button></button>
   <script src="script.js"></script>
 </body>
 </html>
