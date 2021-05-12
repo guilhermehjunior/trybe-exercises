@@ -66,8 +66,9 @@ window.onload = () => {
     event.preventDefault();
   })
   const formatoData = {format:'dd/mm/yyyy'}
-  data.DatePickerX.init(formatoData);
-  
+  data.DatePickerX.init(formatoData);  
+
+  validation.init('#forms');
 };
 
 
