@@ -4,54 +4,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="styles.css">
   <title>Exercicio 6.1</title>
 </head>
 <body>
-  <header>
-    <h1>Cadastre seu currículo</h1>
-    <p>Preencha o Formulário abaixo:</p>
+  <header class="block box">
+    <h1 class="title is-2">Cadastre seu currículo</h1>
+    <p class="subtitle is-4">Preencha o Formulário abaixo:</p>
   </header>
-  <form action="" method="GET" id="forms">
+  <form action="" method="GET" id="forms" class="block box">
     <fieldset id="campo-dados-pessoais">
       <legend>Dados Pessoais</legend>
-      <label for="name-input">Nome:
-        <input type="text" name="nome" id="name-input" maxlength="40" required>
-      </label>
-      <label for="email-input">Email:
-        <input type="email" name="email" id="email-input" maxlength="50" required>
-      </label>
-      <label for="cpf-input">CPF:
-        <input type="text" name="cpf" id="cpf-input" maxlength="11" required>
-      </label>
-      <label for="adress-input">Endereço:
-        <input type="text" name="endereco" id="adress-input" maxlength="200" required>
-      </label>
-      <label for="city-input">Cidade:
-        <input type="text" name="cidade" id="city-input" maxlength="28" required>
-      </label>
-      <label for="state-select">Estado:
-        <select name="estado" id="state-select" required></select>
-      </label>
-      <input type="radio" name="moradia" id="house-radio" checked>
-      <label for="house-radio">Casa</label>
-      <input type="radio" name="moradia" id="apt-radio">
-      <label for="apt-radio">Apartamento</label>
+      <div class="field">
+        <label for="name-input">Nome:
+          <input class="input is-primary" type="text" name="nome" id="name-input" maxlength="40" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="email-input">Email:
+          <input class="input is-primary" type="email" name="email" id="email-input" maxlength="50" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="cpf-input">CPF:
+          <input class="input is-primary" type="text" name="cpf" id="cpf-input" maxlength="11" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="adress-input">Endereço:
+          <input class="input is-primary" type="text" name="endereco" id="adress-input" maxlength="200" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="city-input">Cidade:
+          <input class="input is-primary" type="text" name="cidade" id="city-input" maxlength="28" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="state-select">Estado:
+          <select name="estado" id="state-select" required></select>
+        </label>
+      </div>
+      <div class="field">
+        <input class="" type="radio" name="moradia" id="house-radio" checked>
+        <label for="house-radio">Casa</label>
+        <input class="" type="radio" name="moradia" id="apt-radio">
+        <label for="apt-radio">Apartamento</label>
+      </div>
     </fieldset>
     <fieldset>
       <legend>Dados de Emprego</legend>
-      <label for="text-area-cv">Resumo do currículo
-        <textarea name="cv" id="text-area-cv" cols="30" rows="10" required maxlength="1000"></textarea>
-      </label>
-      <label for="cargo-input"> Cargo
-        <input type="text" name="cargo" id="cargo-input" maxlength="40" required>
-      </label>
-      <label for="descricao-cargo-input">Descricao do Cargo
-        <input type="text" name="descricao-cargo" id="descricao-cargo-input" maxlength="500" required>
-      </label>
-      <label for="data-inicio-input">Data de Inicio
-        <input type="text" name="data-inicio" id="data-inicio-input" required maxlength="10">
-      </label>
+      <div class="field">
+        <label for="text-area-cv">Resumo do currículo
+          <textarea class="textarea is-primary" name="cv" id="text-area-cv" cols="30" rows="10" required maxlength="1000"></textarea>
+        </label>
+      </div>
+      <div class="field">
+        <label for="cargo-input"> Cargo
+          <input class="input is-primary" type="text" name="cargo" id="cargo-input" maxlength="40" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="descricao-cargo-input">Descricao do Cargo
+          <input class="input is-primary" type="text" name="descricao-cargo" id="descricao-cargo-input" maxlength="500" required>
+        </label>
+      </div>
+      <div class="field">
+        <label for="data-inicio-input">Data de Inicio
+          <input class="input is-primary" type="text" name="data-inicio" id="data-inicio-input" required maxlength="10">
+        </label>
+      </div>
     </fieldset>
     <button type="submit" id="faz-tudo">Gerar C.V.</button>
     <button type="reset" id="reset-button">Apagar todos os campos</button>
