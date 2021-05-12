@@ -1,3 +1,5 @@
+const form = document.querySelector('#forms');
+const inputs = form.querySelectorAll('input');
 const listaEstados = document.querySelector('#state-select');
 const data = document.querySelector('#data-inicio-input');
 const button = document.querySelector('button');
@@ -30,18 +32,10 @@ const estados = [
   'SE - Sergipe',
   'TO - Tocantins'
   ];
- 
-window.onload = () => {
-  for (let state = 0; state < estados.length; state += 1) {
-    const estado = document.createElement('option');
-    estado.innerText = estados[state];
-    listaEstados.appendChild(estado);
-  }
-};
 
-// ideia de https://www.guj.com.br/t/resolvido-como-validar-data-com-java-script/276656
+  // ideia de https://www.guj.com.br/t/resolvido-como-validar-data-com-java-script/276656
 function validarData() {
-  let formatoValido = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;;
+  const formatoValido = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;;
   if(!formatoValido.test(data.value)) {
     alert('Formato de data incorreto');
   } else {
@@ -60,8 +54,16 @@ function validarData() {
     }
   }
 }
+  
+window.onload = () => {
+  for (let state = 0; state < estados.length; state += 1) {
+    const estado = document.createElement('option');
+    estado.innerText = estados[state];
+    listaEstados.appendChild(estado);
+  }
+  button.addEventListener('click', (event)=> {
+    event.preventDefault();
+  })
+};
 
-button.addEventListener('click', () => {
-  console.log(data.value)
-  validarData();
-});
+
