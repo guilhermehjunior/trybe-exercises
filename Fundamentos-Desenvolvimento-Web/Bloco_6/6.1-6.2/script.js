@@ -54,7 +54,8 @@ function validarData() {
     }
   }
 }
-  
+ 
+
 window.onload = () => {
   for (let state = 0; state < estados.length; state += 1) {
     const estado = document.createElement('option');
@@ -64,6 +65,9 @@ window.onload = () => {
   button.addEventListener('click', (event)=> {
     event.preventDefault();
   })
+  const formatoData = {format:'dd/mm/yyyy'}
+  data.DatePickerX.init(formatoData);
+  
 };
 
 
