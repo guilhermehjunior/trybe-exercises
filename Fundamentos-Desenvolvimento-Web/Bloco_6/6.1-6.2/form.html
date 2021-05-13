@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="stylesheet" href="DatePickerX/dist/css/DatePickerX.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Exercicio 6.1</title>
+</head>
+<body>
+  <header class="block box container">
+    <h1 class="title is-2">Cadastre seu currículo</h1>
+    <p class="subtitle is-4">Preencha o Formulário abaixo:</p>
+  </header>
+  <form action="" method="GET" id="forms" class="block box container js-form">
+    <div id="campo-dados-pessoais" class="field">
+      <h2 class="field title is-5">Dados Pessoais</h2>
+      <div class="field">
+        <label class="label" for="name-input">Nome:</label>
+        <input class="input is-primary" type="text" name="nome" id="name-input" maxlength="" data-validate-field="nome" required>
+      </div>
+      <div class="field">
+        <label class="label" for="email-input">Email:</label>
+        <input class="input is-primary" type="email" name="email" id="email-input" maxlength="50" data-validate-field="email" required>
+      </div>
+      <div class="field">
+        <label class="label" for="cpf-input">CPF:</label>
+        <input class="input is-primary" type="text" name="cpf" id="cpf-input" maxlength="" data-validate-field="cpf" required>
+      </div>
+      <div class="field">
+        <label class="label" for="adress-input">Endereço:</label>
+        <input class="input is-primary" type="text" name="endereco" id="adress-input" maxlength="200" data-validate-field="endereco" required>
+      </div>
+      <div class="field">
+        <label class="label" for="city-input">Cidade:</label>
+        <input class="input is-primary" type="text" name="cidade" id="city-input" maxlength="28" data-validate-field="cidade" required>
+      </div>
+      <div class="field">
+        <label class="label" for="state-select">Estado:</label>
+        <select class="select" name="estado" id="state-select" required></select>
+      </div>
+      <div class="field">
+        <input class="radio" type="radio" name="moradia" id="house-radio" checked>
+        <label class="radio" for="house-radio">Casa</label>
+        <input class="radio" type="radio" name="moradia" id="apt-radio">
+        <label class="radio" for="apt-radio">Apartamento</label>
+      </div>
+    </div>
+    <div class="field">
+      <h2 class="field title is-5">Dados de Emprego</h2>
+      <div class="field">
+        <label class="label" for="text-area-cv">Resumo do currículo:</label>
+        <textarea class="textarea is-primary" name="cv" id="text-area-cv" cols="30" rows="10" data-validate-field="resumo" required maxlength="1000"></textarea>
+      </div>
+      <div class="field">
+        <label class="label" for="cargo-input">Cargo:</label>
+        <input class="input is-primary" type="text" name="cargo" id="cargo-input" maxlength="40" data-validate-field="cargo" required>
+      </div>
+      <div class="field">
+        <label class="label" for="descricao-cargo-input">Descricao do Cargo:</label>
+        <input class="input is-primary" type="text" name="descricao-cargo" id="descricao-cargo-input" maxlength="500" data-validate-field="descricao"required>
+      </div>
+      <div class="field">
+        <label class="label" for="data-inicio-input">Data de Inicio:</label>
+        <input class="input is-primary" type="text" name="data-inicio" id="data-inicio-input" required maxlength="10">
+      </div>
+    </div>
+    <button class="button is-success" type="submit" id="faz-tudo">Gerar C.V.</button>
+    <button class="button is-danger" type="reset" id="reset-button">Apagar todos os campos</button>
+  </form>
+  <script src="script.js"></script>
+  <script src="DatePickerX/dist/js/DatePickerX.min.js"></script>
+  <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script>
+</body>
+</html>
