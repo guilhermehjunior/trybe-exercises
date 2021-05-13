@@ -54,7 +54,7 @@ function validarData() {
     }
   }
 }
- 
+
 
 window.onload = () => {
   for (let state = 0; state < estados.length; state += 1) {
@@ -62,13 +62,53 @@ window.onload = () => {
     estado.innerText = estados[state];
     listaEstados.appendChild(estado);
   }
-  button.addEventListener('click', (event)=> {
-    event.preventDefault();
-  })
+  // button.addEventListener('click', (event)=> {
+  //   event.preventDefault();
+  // })
   const formatoData = {format:'dd/mm/yyyy'}
   data.DatePickerX.init(formatoData);  
-
-  validation.init('#forms');
+  new JustValidate('.js-form',{
+    Rules: {
+      nome:{
+        maxLength:40,
+        required:true,
+      },
+      email:{
+        maxLength:50,
+        email:true,
+        required:true
+      },
+      cpf:{
+        maxLength:11,
+        required:true
+      },
+      endereco:{
+        maxLength:90,
+        required:true
+      },
+      cidade:{
+        maxLength:28,
+        required:true
+      },
+      resumo:{
+        maxLength:1000,
+        required:true,
+      },
+      cargo:{
+        maxLength:40,
+        required:true
+      },
+      descricao:{
+        maxLength:500,
+        required:true
+      },
+    },
+    Messages:{
+      nome:  'Limite de chars alcancado',
+      cpf: {maxLength: 'Limite de chars alcancado'}
+    }
+  }
+  );
 };
 
 
