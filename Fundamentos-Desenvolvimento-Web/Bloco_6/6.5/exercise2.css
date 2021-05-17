@@ -7,10 +7,17 @@ html {
 
 body {
   background-color: gray;
+  padding: 0;
+  font-size: 14px;
 }
 
 header {
   text-align: center;
+  background-color: dimgray;
+}
+
+header p {
+  font-size: 23px;
 }
 
 nav ul {
@@ -24,16 +31,37 @@ nav ul li {
   margin: 5px 10px;
 }
 
-@media screen and (max-width: 375px) {
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  margin: 0 10px;
+}
+
+.container h1 {
+  font-size: 20px;
+}
+
+.container h2 {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
   body {
     padding: 0;
-    font-size: 14px;
+    font-size: 16px;
   }
   header {
-    background-color: dimgray;
+    background-color: blue;
   }
   header p {
-    font-size: 23px;
+    font-size: 30px;
+  }
+
+  aside {
+    text-align: center;
   }
 
   aside ul {
@@ -42,14 +70,15 @@ nav ul li {
   }
   
   .container {
-    margin: 0 10px;
+    margin: 0 20px;
   }
 
   .container h1 {
-    font-size: 20px;
+    font-size: 26px;
+    text-align: center;
   }
 
   .container h2 {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
