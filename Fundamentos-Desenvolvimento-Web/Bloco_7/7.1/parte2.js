@@ -45,3 +45,20 @@ botao.addEventListener('click', () => {
 });
 
 //Exercicio 4
+
+const funcao1 = (string) => string.replace('x','Guilherme');
+  
+console.log(funcao1('Xaxixo'));
+
+const vetorGlobal = ['Memoria', 'Mestre no TFT', 'JavaScript', 'HTML', 'CSS'];
+
+const funcao2 = (string) => {
+  let frase = `${funcao1(string)} Minhas cinco principais habilidades sao:`;
+  vetorGlobal.sort().forEach(element => {
+    frase += `
+    -> ${element}` 
+  });
+  return frase;
+}
+
+console.log (funcao2('Tryber x Aqui!'));
