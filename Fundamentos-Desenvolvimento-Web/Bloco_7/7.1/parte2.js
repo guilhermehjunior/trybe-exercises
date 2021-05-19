@@ -31,3 +31,17 @@ const longestWord = (string) => {
 }
 
 console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu")); // retorna 'aconteceu'
+
+//Exercicio 3
+
+const botao = document.querySelector('#contador');
+const h1 = document.querySelector('#contagem');
+
+let clickCount = 0;
+
+botao.addEventListener('click', () => {
+  clickCount += 1;
+  h1.innerHTML = clickCount;
+});
+
+//Exercicio 4
