@@ -66,14 +66,37 @@ console.log(novaLesson1);
 const totalEstudantes = (objeto) => {
   const lessons = Object.keys(objeto);
   const novoObjeto = {};
+  let totalEstudantes = 0;
   for (let licao = 0; licao < lessons.length; licao += 1) {
-    // console.log(objeto[lessons[licao]].numeroEstudantes);
     novoObjeto[`lessons${licao+1}`] = {};
     novoObjeto[`lessons${licao+1}`].numeroEstudantes = objeto[lessons[licao]].numeroEstudantes;
+    totalEstudantes += objeto[lessons[licao]].numeroEstudantes;
   }
+  console.log(totalEstudantes);
   return novoObjeto;
 };
 
 console.log(totalEstudantes(allLessons));
 
+// 7 - Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
 
+const valorDaChave = (objeto, posicao) => {
+  const valores = Object.values(objeto);
+  if (posicao >= valores.length) return `ta maluco irmao`;
+  return valores[posicao];
+};
+
+console.log(valorDaChave(lesson1,0));
+
+// 8 - Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
+
+const existeNoObjeto = (objeto, key, valor) => {
+  const entradas = Object.entries(objeto);
+  const arrayComparacao = [key, valor];
+  for (let index = 0; index < entradas.length; index += 1){
+    if (entradas[index][0] === arrayComparacao[0] && entradas[index][1] === arrayComparacao[1]) return true;
+  }
+  return false;
+};
+
+console.log(existeNoObjeto(lesson2, 'materia', 'Matemática'));
