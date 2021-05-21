@@ -15,3 +15,9 @@ const result = [32, 21];
 
 assert.strictEqual(typeof greaterThanTen, 'function');
 assert.deepStrictEqual(greaterThanTen(parameter), result);
+
+const parameter2 = [-4, 11, 32, 9, 21, -11, 100];
+const result2 = [11, 32, 21, 100];
+
+assert.deepStrictEqual(greaterThanTen(parameter2), result2);
+
