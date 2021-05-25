@@ -16,4 +16,3 @@ const infos = (nome) => ({
 
 console.log(newEmployees(infos));
 
-// Exercicio2
