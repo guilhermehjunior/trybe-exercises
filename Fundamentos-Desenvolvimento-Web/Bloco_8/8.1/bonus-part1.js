@@ -58,16 +58,14 @@ const gameActions = {
     warrior.healthPoints -= danoDragon;
   },
   finalDoTurno: () => {
+    gameActions.warriorTurn(warriorDamage, warrior, dragon);
+    gameActions.mageTurn(mageDamage, mage, dragon);
+    gameActions.dragonTurn(dragonDamage, mage, warrior, dragon);
     console.log(battleMembers);
     return battleMembers;
   },
 };
 
-gameActions.warriorTurn(warriorDamage, warrior, dragon);
-gameActions.mageTurn(mageDamage, mage, dragon);
-gameActions.dragonTurn(dragonDamage, mage, warrior, dragon);
+
 gameActions.finalDoTurno();
-gameActions.warriorTurn(warriorDamage, warrior, dragon);
-gameActions.mageTurn(mageDamage, mage, dragon);
-gameActions.dragonTurn(dragonDamage, mage, warrior, dragon);
-gameActions.finalDoTurno();
+
