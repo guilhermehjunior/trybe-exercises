@@ -64,3 +64,28 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult = false;
+
+function authorUnique() {
+  books.sort((a, b) => a.author.birthYear - b.author.birthYear);
+  let resultado = true;
+  books.forEach((book, index) => {
+    if (index === books.length - 1) return;
+    if (book.author.birthYear === books[index+1].author.birthYear) {
+      resultado = false;
+      return;
+    } 
+  });
+  return resultado;
+}
+
+assert.strictEqual(authorUnique(), expectedResult);
+
+// resposta do gabarito
+// function authorUnique() {
+//   return books.every((book) =>
+//     !books.some((bookSome) =>
+//       (bookSome.author.birthYear === book.author.birthYear)
+//       && (bookSome.author.name !== book.author.name)));
+// }
