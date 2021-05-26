@@ -63,16 +63,20 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
+const expectedResult = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin',
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991,
+};
 
-function smallerName() {
-  let nameBook;
-  books.forEach((element) => {
-    // nameBook === undefined !undefined = true
-    if (!nameBook || element.name.length < nameBook.length) nameBook = element.name;
-  });
-  // Variável nameBook que receberá o valor do menor nome;
-  return nameBook;
+function getNamedBook() {
+  // escreva seu código aqui
+  return books.find((book) => book.name.length === 26);
 }
 
-assert.strictEqual(smallerName(), 'Duna');
+assert.deepStrictEqual(getNamedBook(), expectedResult);
