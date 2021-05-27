@@ -73,6 +73,7 @@ const expectedResult = [
 ];
 
 function fantasyOrScienceFictionAuthors() {
+  // filter((book) => wantedGenres.includes(book.genre))
   const livrosFantasiaFiccao = books.filter((book)=> 
   book.genre === 'Fantasia' || 
   book.genre === 'Ficção Científica');

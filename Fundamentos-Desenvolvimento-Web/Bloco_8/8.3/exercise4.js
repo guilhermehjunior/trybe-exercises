@@ -90,6 +90,7 @@ const expectedResult = [
 ];
 
 function oldBooksOrdered() {
+  // ano atual const currentYear = new Date().getFullYear();
   const livrosAntigos = books.filter((book)=> (2021-book.releaseYear)>= 60);
   return livrosAntigos.sort((a, b) => a.releaseYear - b.releaseYear);
 }
