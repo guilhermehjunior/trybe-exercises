@@ -64,3 +64,13 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult = 43;
+
+function averageAge() {
+  const somaIdades = books.reduce((somaIdades, book) => 
+  (somaIdades + book.releaseYear - book.author.birthYear), 0);
+  return somaIdades / books.length;
+}
+
+assert.strictEqual(averageAge(), expectedResult);
