@@ -64,3 +64,16 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult = 'Names: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.';
+
+function allAuthor() {
+  return books.reduce((accumulator, nome, index, array) => 
+  index === array.length - 1 ? 
+  `${accumulator} ${nome.author.name}.` : `${accumulator} ${nome.author.name},`
+  , 'Names:');   
+}
+
+console.log(allAuthor());
+
+assert.strictEqual(allAuthor(), expectedResult);
