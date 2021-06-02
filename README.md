@@ -34,7 +34,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4-2: _JavaScript - Array e loop For_
 - [X] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [X] 4-4: _JavaScript - Objetos e funções_
-- [X] 4-5: _Projeto - Playground Functions()_
+- [X] 4-5: _Projeto - Playground Functions_
 
 ##### Bloco 5: JavaScript: DOM, Eventos e Web Storage
 
@@ -46,7 +46,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-6: _[Projeto - Arte com Pixels](https://guilhermehjunior.github.io/PixelArt/)_
 - [X] 5-7: _[Projeto - Lista de tarefas](https://guilhermehjunior.github.io/ToDoList/)_
 - [X] 5-7: _[Projeto - Adivinhe a Cor](https://guilhermehjunior.github.io/AdivinhaCor/)_
-- [ ] 5-7: _[Projeto - Carta Misteriosa]()_
+- [X] 5-7: _[Projeto - Carta Misteriosa](https://guilhermehjunior.github.io/CartaMisteriosa/)_
 
 ##### Bloco 6: HTML e CSS: Forms, Flexbox e Responsivo
 
@@ -70,7 +70,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 8-2: _JavaScript ES6 - Higher Order Functions - map e filter_
 - [X] 8-3: _JavaScript ES6 - Higher Order Functions - reduce_
 - [X] 8-4: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
-- [X] 8-5: _[Projeto - Zoo functions]()_
+- [X] 8-5: _Projeto - Zoo functions_
 
 ##### Bloco 9: Assincronicidade & Callbacks
 
