@@ -15,12 +15,14 @@ const arrayAleatorio = Array.from({length:10}, () => Math.floor(Math.random() * 
 
 const arrayAleatorioElevadoDois = arrayAleatorio.map((num)=> num * num);
 
+
 const funcaoPromise = new Promise((resolve, reject) => {
   const soma = arrayAleatorioElevadoDois.reduce((acc, currentValue) => acc + currentValue);
   if (soma < 8000) resolve(soma);
-  reject('Eh mais de oito mil!');
+  reject('É mais de oito mil! Essa promise deve estar quebrada!');
 });
 
 funcaoPromise
   .then((response) => [2, 3, 4, 5].map((numero) => response / numero))
+  .then((array) => array.reduce((sum, currentValue) => sum + currentValue))
   .catch((error) => console.log(error));
