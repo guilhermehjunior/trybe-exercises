@@ -1,4 +1,5 @@
 const hydrate = require('../part2-exercise3');
+const { describe, it, expect } = require('@jest/globals');
 
 describe('Testa a função hydrate', () => {
   it('Testa se a função hydrate é definida', () => {
