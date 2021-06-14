@@ -1,5 +1,5 @@
-
 const myFizzBuzz = require('../part1-exercise4');
+const { describe, it, expect } = require('@jest/globals');
 
 describe('Testes para o Exercicio 4', () => {
   it('Verifica se o retorno e fizzBuzz', () => {

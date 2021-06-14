@@ -1,4 +1,5 @@
 const { obj1, obj2, obj3 } = require('../part1-exercise5');
+const { describe, it, expect } = require('@jest/globals');
 
 
 describe('Testes exercicio 5', () => {

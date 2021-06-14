@@ -1,4 +1,5 @@
 const myRemove = require('../part1-exercise2');
+const { describe, test, expect } = require('@jest/globals');
 
 const novoArray = [1, 2, 3, 4, 5];
 
