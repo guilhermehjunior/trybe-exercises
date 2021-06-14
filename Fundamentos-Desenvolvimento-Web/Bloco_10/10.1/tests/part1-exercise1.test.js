@@ -1,4 +1,4 @@
-const sum = require('./part1-exercise1');
+const sum = require('../part1-exercise1');
 
 test('Testando as somas', () => {
   expect(sum(4,5)).toBe(9); 

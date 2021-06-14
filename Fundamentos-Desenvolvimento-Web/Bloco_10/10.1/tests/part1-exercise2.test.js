@@ -1,4 +1,4 @@
-const myRemove = require('./part1-exercise2');
+const myRemove = require('../part1-exercise2');
 
 const novoArray = [1, 2, 3, 4, 5];
 

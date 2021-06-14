@@ -1,4 +1,4 @@
-const myRemoveWithoutCopy = require('./part1-exercise3');
+const myRemoveWithoutCopy = require('.part1-exercise3');
 
 const novoArray = [1, 2, 3, 4, 5];
 
