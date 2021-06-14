@@ -8,5 +8,5 @@ test('Testando as somas', () => {
 
 test('Testing if it is a number', () => {
   expect(() => sum(4, '5')).toThrow();
-  expect(() => sum(4, '5')).toThrowError(new Error('It is not a number'));
+  expect(() => sum(4, '5')).toThrowError('It is not a number');
 });
