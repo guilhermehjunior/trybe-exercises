@@ -26,14 +26,11 @@ describe('Testando Promise - getAnimalByAge', () => {
     expect.assertions(1);
     const animais = await getAnimalbyAge(5);
     expect(animais[0]).toEqual({ name: 'Preguiça', age: 5, type: 'Cat' });
+    //return expect(getAnimalbyAge(5)).resolves.toEqual({ name: 'Preguiça', age: 5, type: 'Cat' });
   });
 
   test('quando nao existe animal com a idade procurada', async () => {
     expect.assertions(1);
-    try {
-      await getAnimalbyAge(7);
-    } catch (error) {
-      expect(error).toBe('Nenhum animal com essa idade!');
-    }
+    return expect(getAnimalbyAge(7)).rejects.toBe('Nenhum animal com essa idade!');
   });
 });
