@@ -1,4 +1,4 @@
-const {getAnimal, findAnimalByName} = require('../exercise6');
+const {getAnimal, getAnimalbyAge} = require('../exercise6');
 const { describe, test, expect } = require('@jest/globals');
 
 describe('Testando promise - findAnimalByName', () => {
@@ -18,5 +18,22 @@ describe('Testando promise - findAnimalByName', () => {
         expect(error).toEqual('Nenhum animal com esse nome!')
       );
     });
+  });
+});
+
+describe('Testando Promise - getAnimalByAge', () => {
+  test('Quando existe animal com a idade procurada', async () => {
+    expect.assertions(1);
+    const animais = await getAnimalbyAge(5);
+    expect(animais[0]).toEqual({ name: 'Preguiça', age: 5, type: 'Cat' });
+  });
+
+  test('quando nao existe animal com a idade procurada', async () => {
+    expect.assertions(1);
+    try {
+      await getAnimalbyAge(7);
+    } catch (error) {
+      expect(error).toBe('Nenhum animal com essa idade!');
+    }
   });
 });
