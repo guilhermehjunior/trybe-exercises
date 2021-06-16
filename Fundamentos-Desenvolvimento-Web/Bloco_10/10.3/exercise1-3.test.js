@@ -2,7 +2,7 @@ const exercises = require('./exercise1-3');
 const { describe, test, expect } = require('@jest/globals');
 
 
-describe('Exercicios realizados no dia 10.3', () => {
+describe('Exercicios 1-3 realizados no dia 10.3', () => {
   test('Teste realizado para ex 1', () => {
     exercises.randomNumber = jest
     .fn()
