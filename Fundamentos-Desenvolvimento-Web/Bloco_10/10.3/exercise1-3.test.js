@@ -1,4 +1,4 @@
-const exercises = require('./exercise1');
+const exercises = require('./exercise1-3');
 const { describe, test, expect } = require('@jest/globals');
 
 
@@ -36,6 +36,8 @@ describe('Exercicios realizados no dia 10.3', () => {
     expect(exercises.randomNumber).toHaveBeenCalledTimes(1);
 
     exercises.randomNumber.mockReset();
+    expect(exercises.randomNumber).toHaveBeenCalledTimes(0);
+    
     exercises.randomNumber.mockImplementation((a) => 2 * a);
 
     expect(exercises.randomNumber(10)).toBe(20);
