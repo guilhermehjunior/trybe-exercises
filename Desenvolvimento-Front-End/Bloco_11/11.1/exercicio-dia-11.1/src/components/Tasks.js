@@ -1,6 +1,6 @@
-const Task = (value) => {
+const Task = (prop) => {
   return (
-    <li>{value}</li>
+    <li>{prop.value}</li>
   );
 }
 
