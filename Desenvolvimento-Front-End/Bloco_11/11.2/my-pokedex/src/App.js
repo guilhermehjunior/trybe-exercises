@@ -1,6 +1,5 @@
-import data from './data.js';
-import Pokemon from './Components/Pokemon';
 import Pokedex from './Components/Pokedex';
+import './App.css';
 
 
 
