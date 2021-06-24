@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokedex from './Components/Pokedex';
+import Pokemon from './Components/Pokemon';
 import './App.css';
 import data from './data';
 import Button from './Components/Button';
@@ -7,7 +7,6 @@ import Button from './Components/Button';
 const types = data.map((pokemon) => pokemon.type);
 const uniqueTypes = [...new Set(types)];
 // Set cria um novo objeto sem repeticoes do array
-
 
 class App extends React.Component {
   constructor(props) {
@@ -50,10 +49,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>My Pokedex:</h1>
-        {uniqueTypes.map((type) => <Button status={false} key={type} text={type} handler={() => this.clickHandlerType(type)} />)}
+        <section className="button-container">
+          { uniqueTypes.map((type) => <Button status={false} key={type} text={type} handler={() => this.clickHandlerType(type)} />) }
+          <Button status={false} text='All' handler = { this.clickHandlerAll }/>
+        </section>
         <Button status={this.state.disableButton} text='Next' handler = { this.clickHandlerNext }/>
-        <Button status={false} text='All' handler = { this.clickHandlerAll }/>
-        <Pokedex pokemon={ this.state.showingPokemons[this.state.posicaoPokemon] }/>
+        <section className="pokemon-container">
+          <Pokemon poke={ this.state.showingPokemons[this.state.posicaoPokemon] }/>
+        </section>
       </div>
     );
   }

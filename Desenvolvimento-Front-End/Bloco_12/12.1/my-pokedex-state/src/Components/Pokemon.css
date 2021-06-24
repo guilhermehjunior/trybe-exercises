@@ -2,8 +2,8 @@
   border: 1px solid gray;
   border-radius: 5px;
   display: flex;
-  flex: 1 1 auto;
-  width: 48%;
+  flex: 0 1 auto;
+  width: 70%;
   min-width: 250px;
   justify-content: center;
   align-items: center;

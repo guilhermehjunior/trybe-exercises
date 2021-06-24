@@ -1,0 +1,12 @@
+.button {
+  width: 80px;
+  height: 35px;
+  background-color: yellow;
+  color: black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.button:disabled {
+  opacity: 0.5;
+}

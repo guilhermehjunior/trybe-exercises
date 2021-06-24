@@ -4,3 +4,15 @@
   border-radius: 5px;
   margin: 2px;
 }
+
+.pokemon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
