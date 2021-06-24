@@ -2,6 +2,7 @@ import React from 'react';
 import Pokedex from './Components/Pokedex';
 import './App.css';
 import data from './data';
+import Button from './Components/Button';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +10,10 @@ class App extends React.Component {
     this.clickHandlerNext = this.clickHandlerNext.bind(this);
     this.clickHandlerFire = this.clickHandlerFire.bind(this);
     this.clickHandlerPsychic = this.clickHandlerPsychic.bind(this);
+    this.clickHandlerAll= this.clickHandlerAll.bind(this);
     this.state = {
       posicaoPokemon:0,
-      showingPokemons: data.filter((pokemon) => pokemon.type === 'Fire'),
+      showingPokemons: data,
     }
   }
 
@@ -26,12 +28,21 @@ class App extends React.Component {
   clickHandlerFire() {
     this.setState({
       showingPokemons: data.filter((pokemon) => pokemon.type === 'Fire'),
+      posicaoPokemon:0,
     });
   }
 
   clickHandlerPsychic() {
     this.setState({
-      showingPokemons: data.filter((pokemon) => pokemon.type === 'Psychic')
+      showingPokemons: data.filter((pokemon) => pokemon.type === 'Psychic'),
+      posicaoPokemon:0,
+    });
+  }
+
+  clickHandlerAll() {
+    this.setState({
+      showingPokemons: data,
+      posicaoPokemon:0,
     });
   }
 
@@ -39,9 +50,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>My Pokedex:</h1>
-        <button onClick={ this.clickHandlerNext }>Next</button>
-        <button onClick={ this.clickHandlerFire }>Fire</button>
-        <button onClick={ this.clickHandlerPsychic }>Psychic</button>
+        <Button text='Next' handler = { this.clickHandlerNext }/>
+        <Button text='Fire' handler = { this.clickHandlerFire }/>
+        <Button text='Psychic' handler = { this.clickHandlerPsychic }/>
+        <Button text='All' handler = { this.clickHandlerAll }/>
         <Pokedex pokemon={ this.state.showingPokemons[this.state.posicaoPokemon] }/>
       </div>
     );
