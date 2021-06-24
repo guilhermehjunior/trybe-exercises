@@ -1,13 +1,13 @@
 import React from 'react';
 import Pokemon from './Pokemon';
-import data from '../data';
 import './Pokedex.css';
 
 class Pokedex extends React.Component {
   render() {
+    const { pokemon } = this.props;
     return (
       <div className='pokedexContainer'>
-         <Pokemon  poke={data[0]} />
+         <Pokemon  poke={pokemon} />
       </div>
     );
   }
