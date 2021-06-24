@@ -6,17 +6,19 @@ import Button from './Components/Button';
 
 const types = data.map((pokemon) => pokemon.type);
 const uniqueTypes = [...new Set(types)];
+// Set cria um novo objeto sem repeticoes do array
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.clickHandlerNext = this.clickHandlerNext.bind(this);
     this.clickHandlerType = this.clickHandlerType.bind(this);
-    this.clickHandlerPsychic = this.clickHandlerPsychic.bind(this);
     this.clickHandlerAll= this.clickHandlerAll.bind(this);
     this.state = {
       posicaoPokemon:0,
       showingPokemons: data,
+      disableButton: false,
     }
   }
 
@@ -29,16 +31,11 @@ class App extends React.Component {
   }
 
   clickHandlerType(type) {
+    const pokemonsByType = data.filter((pokemon) => pokemon.type === type);
     this.setState({
-      showingPokemons: data.filter((pokemon) => pokemon.type === type),
+      showingPokemons: pokemonsByType,
       posicaoPokemon:0,
-    });
-  }
-
-  clickHandlerPsychic() {
-    this.setState({
-      showingPokemons: data.filter((pokemon) => pokemon.type === 'Psychic'),
-      posicaoPokemon:0,
+      disableButton: pokemonsByType.length === 1 ? true : false,
     });
   }
 
@@ -53,9 +50,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>My Pokedex:</h1>
-        {uniqueTypes.map((type) => <Button key={type} text={type} handler={() => this.clickHandlerType(type)} />)}
-        <Button text='Next' handler = { this.clickHandlerNext }/>
-        <Button text='All' handler = { this.clickHandlerAll }/>
+        {uniqueTypes.map((type) => <Button status={false} key={type} text={type} handler={() => this.clickHandlerType(type)} />)}
+        <Button status={this.state.disableButton} text='Next' handler = { this.clickHandlerNext }/>
+        <Button status={false} text='All' handler = { this.clickHandlerAll }/>
         <Pokedex pokemon={ this.state.showingPokemons[this.state.posicaoPokemon] }/>
       </div>
     );
