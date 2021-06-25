@@ -1,0 +1,4 @@
+.fieldset-dados-pessoais{
+  display: flex;
+  flex-direction: column;
+}

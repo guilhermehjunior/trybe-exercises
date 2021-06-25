@@ -1,5 +1,7 @@
 import React from 'react';
 import Input from './Input';
+import inputsPessoais from '../inputsPessoais';
+import './PersonalData.css';
 
 class PersonalData extends React.Component {
   constructor(props) {
@@ -24,12 +26,18 @@ class PersonalData extends React.Component {
 
   render() {
     return (
-      <fieldset>
-        <Input 
-        inputLabel="Nome:"
-        inputType="text"
-        inputName="nome"
-        inputOnChange={ this.changeHandle } />
+      <fieldset className="fieldset-dados-pessoais">
+        <legend>Dados Pessoais:</legend>
+         { inputsPessoais.map((input)=>
+         <Input 
+         inputLabel={ input.label }
+         inputType={ input.type }
+         inputName={ input.name }
+         inputOnChange={ this.changeHandle }
+         inputValue={ this.state.nome } 
+         inputMaxLength={ input.maxLength }
+         /> 
+         ) } 
       </fieldset>
     );
   }
