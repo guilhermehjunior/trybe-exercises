@@ -23,7 +23,7 @@ const inputs = [
 {
   label:'Endereço',
   type:'text',
-  name:'endereço',
+  name:'endereco',
   maxLength: 200,
   isRequired: true,
 },
