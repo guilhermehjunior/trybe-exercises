@@ -8,7 +8,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Fomulario para C.V:</h1>
-        <PersonalData />
+        <form>
+          <PersonalData />
+        </form>
       </div>
     );
   }
