@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 2px;
+  background-color: gray;
+}
+
+.pokemon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  width: 70%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
