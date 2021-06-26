@@ -8,7 +8,8 @@ class Input extends React.Component {
       inputType, 
       inputName, 
       inputOnChange,
-      inputOnBlur, 
+      inputOnBlur,
+      inputOnClick, 
       inputValue, 
       inputMaxLength,
       inputChecked, 
@@ -23,9 +24,10 @@ class Input extends React.Component {
         name={ inputName }
         onChange={ inputOnChange }
         onBlur={ inputOnBlur }
+        onClick={ inputOnClick }
         value={ inputValue }
         maxLength={ inputMaxLength }
-        checked= { inputChecked }
+        defaultChecked= { inputChecked }
         required= { inputRequired }
         />
       </label>
@@ -37,7 +39,9 @@ Input.propTypes = {
   inputName: PropTypes.string.isRequired,
   inputLabel: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
-  inputOnChange: PropTypes.func.isRequired,
+  inputOnChange: PropTypes.func,
+  inputOnclick: PropTypes.func,
+  inputOnBlur: PropTypes.func,
   inputValue: PropTypes.string,
   inputMaxLength: PropTypes.number,
   inputChecked: PropTypes.bool,

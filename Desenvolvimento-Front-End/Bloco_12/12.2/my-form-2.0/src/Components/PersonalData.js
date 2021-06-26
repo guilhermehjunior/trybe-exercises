@@ -24,32 +24,33 @@ class PersonalData extends React.Component {
          inputRequired= { input.isRequired }
          /> 
          ) } 
-        <select name="estado" onChange={ onChangeHandler }>
-          {states.map((estado)=> {
-            const [ siglaENome ] = Object.entries(estado);
-          return (
-            <option key={siglaENome[0]} value={ siglaENome[0] }>
-              { siglaENome[1] }
-            </option>
-          );
-          })}
-        </select>
+        <label htmlFor="estado">
+          Estado:
+          <select name="estado" onChange={ onChangeHandler }>
+            {states.map((estado)=> {
+              const [ siglaENome ] = Object.entries(estado);
+            return (
+              <option key={siglaENome[0]} value={ siglaENome[0] }>
+                { siglaENome[1] }
+              </option>
+            );
+            })}
+          </select>
+        </label>
         <Input
           inputChecked={ true }
           inputLabel="Apartamento"
           inputType="radio"
           inputName="moradia"
-          inputOnChange={ onChangeHandler }
+          inputOnClick={ onChangeHandler }
           inputValue="Apartamento"
-          inputRequired= { true }
          /> 
          <Input
           inputLabel="Casa"
           inputType="radio"
           inputName="moradia"
-          inputOnChange={ onChangeHandler }
+          inputOnClick={ onChangeHandler }
           inputValue="Casa"
-          inputRequired= { true }
          /> 
         
       </fieldset>

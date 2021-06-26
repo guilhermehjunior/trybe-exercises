@@ -3,6 +3,22 @@ import PersonalData from './Components/PersonalData';
 import LastJob from './Components/LastJob';
 import './App.css';
 
+const INITIAL_STATE = {
+    nome: '',
+    email: '',
+    cpf:'',
+    cidade:'',
+    endereco:'',
+    estado:'',
+    moradia:'Apartamento',
+    resumo: '',
+    cargo: '',
+    descricao: '',
+    info: '',
+    infoOnce: true,
+    submited: false,
+}
+
 
 class App extends React.Component {
   constructor() {
@@ -11,6 +27,8 @@ class App extends React.Component {
     this.changeHandle = this.changeHandle.bind(this);
     this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
     this.onBlurHandler = this.onBlurHandler.bind(this);
+    this.onClickButtonHandler = this.onClickButtonHandler.bind(this);
+    this.resetForm = this.resetForm.bind(this);
 
     this.state = {
       nome: '',
@@ -25,6 +43,7 @@ class App extends React.Component {
       descricao: '',
       info: '',
       infoOnce: true,
+      submited: false,
     }
   }
 
@@ -59,6 +78,17 @@ class App extends React.Component {
     }
   }
 
+  onClickButtonHandler(event) {
+    event.preventDefault();
+    this.setState({
+      submited: true,
+    })
+  }
+
+  resetForm() {
+    this.setState(INITIAL_STATE);
+  }
+
   render(){
     return (
       <div className="App">
@@ -74,8 +104,30 @@ class App extends React.Component {
           onChangeHandler={ this.changeHandle } 
           onMouseEnterHandler = { this.onMouseEnterHandler }
           />
-          <button type="submit">Submeter info</button>
+          <button 
+          type="submit" 
+          onClick={ this.onClickButtonHandler }
+          >Submeter info</button>
+          <button 
+          type="button"
+          onClick={ this.resetForm }
+          >Reset</button>
         </form>
+
+        {this.state.submited ?
+          <section className="dados-consolidados">
+            <p>Nome: { this.state.nome }</p>
+            <p>Email: { this.state.email }</p>
+            <p>Cpf: { this.state.cidade }</p>
+            <p>Endere: { this.state.endereco }</p>
+            <p>Cidade: { this.state.cidade }</p>
+            <p>Estado: { this.state.estado }</p>
+            <p>Moradia: { this.state.moradia }</p>
+            <p>Resumo: { this.state.resumo }</p>
+            <p>Cargo: { this.state.cargo }</p>
+            <p>Descrição: { this.state.descricao }</p>
+          </section> : '' 
+        } 
       </div>
     );
   }
