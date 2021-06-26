@@ -16,6 +16,7 @@ class LastJob extends React.Component {
           textAreaValue= { estado.resumo }
           textAreaLength={ 1000 }
         />
+        <span>{ estado.info }</span>
         <TextArea
           textAreaLabel="Cargo:"
           textAreaName="cargo"
@@ -24,7 +25,6 @@ class LastJob extends React.Component {
           textAreaValue= { estado.cargo }
           textAreaLength={ 40 }
         />
-        <span>{ estado.info }</span>
         <TextArea
           textAreaLabel="Descrição do cargo"
           textAreaName="descricao"
