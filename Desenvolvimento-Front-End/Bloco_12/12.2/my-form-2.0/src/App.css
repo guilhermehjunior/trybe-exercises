@@ -2,6 +2,10 @@
   text-align: left;
 }
 
+label {
+  margin-bottom: 10px;
+}
+
 .dados-consolidados{
   text-align: center;
  }

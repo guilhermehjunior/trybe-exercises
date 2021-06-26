@@ -1,6 +1,7 @@
 import React from 'react';
 import PersonalData from './Components/PersonalData';
 import LastJob from './Components/LastJob';
+import DadosConsolidados from './Components/DadosConsolidades';
 import './App.css';
 
 const INITIAL_STATE = {
@@ -115,18 +116,7 @@ class App extends React.Component {
         </form>
 
         {this.state.submited ?
-          <section className="dados-consolidados">
-            <p>Nome: { this.state.nome }</p>
-            <p>Email: { this.state.email }</p>
-            <p>Cpf: { this.state.cidade }</p>
-            <p>Endere: { this.state.endereco }</p>
-            <p>Cidade: { this.state.cidade }</p>
-            <p>Estado: { this.state.estado }</p>
-            <p>Moradia: { this.state.moradia }</p>
-            <p>Resumo: { this.state.resumo }</p>
-            <p>Cargo: { this.state.cargo }</p>
-            <p>Descrição: { this.state.descricao }</p>
-          </section> : '' 
+          <DadosConsolidados estado={ this.state } /> : '' 
         } 
       </div>
     );
