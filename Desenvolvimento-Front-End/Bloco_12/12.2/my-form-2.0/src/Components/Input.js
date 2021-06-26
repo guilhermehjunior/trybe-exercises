@@ -7,7 +7,8 @@ class Input extends React.Component {
       inputLabel, 
       inputType, 
       inputName, 
-      inputOnChange, 
+      inputOnChange,
+      inputOnBlur, 
       inputValue, 
       inputMaxLength,
       inputChecked, 
@@ -21,6 +22,7 @@ class Input extends React.Component {
         type={ inputType }
         name={ inputName }
         onChange={ inputOnChange }
+        onBlur={ inputOnBlur }
         value={ inputValue }
         maxLength={ inputMaxLength }
         checked= { inputChecked }

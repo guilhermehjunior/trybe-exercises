@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 class PersonalData extends React.Component {
     render() {
 
-    const { estado, onChangeHandler } = this.props;
+    const { estado, onChangeHandler, onBlurHandler } = this.props;
     return (
       <fieldset className="fieldset-dados-pessoais">
         <legend>Dados Pessoais:</legend>
@@ -18,6 +18,7 @@ class PersonalData extends React.Component {
          inputType={ input.type }
          inputName={ input.name }
          inputOnChange={ onChangeHandler }
+         inputOnBlur={ onBlurHandler }
          inputValue={ estado[input.name] } 
          inputMaxLength={ input.maxLength }
          inputRequired= { input.isRequired }
@@ -59,6 +60,7 @@ class PersonalData extends React.Component {
 PersonalData.propTypes = {
   estado: PropTypes.object.isRequired,
   onChangeHandler: PropTypes.func.isRequired,
+  
 }
 
 export default PersonalData;

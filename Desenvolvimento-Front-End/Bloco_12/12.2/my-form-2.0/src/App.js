@@ -10,6 +10,7 @@ class App extends React.Component {
 
     this.changeHandle = this.changeHandle.bind(this);
     this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
+    this.onBlurHandler = this.onBlurHandler.bind(this);
 
     this.state = {
       nome: '',
@@ -49,6 +50,15 @@ class App extends React.Component {
     } 
   }
 
+  onBlurHandler() {
+    const startsWithNumber = /^\d+/.test(this.state.cidade);
+    if (startsWithNumber) {
+      this.setState({
+        cidade:''
+      });
+    }
+  }
+
   render(){
     return (
       <div className="App">
@@ -57,6 +67,7 @@ class App extends React.Component {
           <PersonalData 
           estado={ this.state } 
           onChangeHandler={ this.changeHandle }
+          onBlurHandler = { this.onBlurHandler }
           />
           <LastJob 
           estado={ this.state } 
