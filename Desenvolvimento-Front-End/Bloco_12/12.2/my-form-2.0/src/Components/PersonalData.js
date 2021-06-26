@@ -5,33 +5,9 @@ import states from '../estados';
 import './PersonalData.css';
 
 class PersonalData extends React.Component {
-  constructor(props) {
-    super(props);
+    render() {
 
-    this.changeHandle = this.changeHandle.bind(this);
-
-    this.state = {
-      nome: '',
-      email: '',
-      cpf:'',
-      cidade:'',
-      endereco:'',
-      estado:'',
-      moradia:'Apartamento',
-    }
-  }
-
-  changeHandle(event) {
-    const { target } = event;
-    const { name } = target;
-    const value = target.name === 'nome' ? target.value.toUpperCase() : target.value;
-  
-    this.setState({
-      [name]: value,
-    })
-  }
-
-  render() {
+    const { estado, onChangeHandler } = this.props;
     return (
       <fieldset className="fieldset-dados-pessoais">
         <legend>Dados Pessoais:</legend>
@@ -40,13 +16,13 @@ class PersonalData extends React.Component {
          inputLabel={ input.label }
          inputType={ input.type }
          inputName={ input.name }
-         inputOnChange={ this.changeHandle }
-         inputValue={ this.state[input.name] } 
+         inputOnChange={ onChangeHandler }
+         inputValue={ estado[input.name] } 
          inputMaxLength={ input.maxLength }
          inputRequired= { input.isRequired }
          /> 
          ) } 
-        <select name="estado" onChange={ this.changeHandle }>
+        <select name="estado" onChange={ onChangeHandler }>
           {states.map((estado)=> {
             const [ siglaENome ] = Object.entries(estado);
           return (
@@ -61,15 +37,17 @@ class PersonalData extends React.Component {
           inputLabel="Apartamento"
           inputType="radio"
           inputName="moradia"
-          inputOnChange={ this.changeHandle }
+          inputOnChange={ onChangeHandler }
           inputValue="Apartamento"
+          inputRequired= { true }
          /> 
          <Input
           inputLabel="Casa"
           inputType="radio"
           inputName="moradia"
-          inputOnChange={ this.changeHandle }
+          inputOnChange={ onChangeHandler }
           inputValue="Casa"
+          inputRequired= { true }
          /> 
         
       </fieldset>

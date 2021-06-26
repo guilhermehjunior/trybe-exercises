@@ -3,49 +3,32 @@ import TextArea from './TextArea';
 import './LastJob.css'
 
 class LastJob extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.changeHandle = this.changeHandle.bind(this);
-
-    this.state = {
-      resumo: '',
-      cargo: '',
-      descricao: '',
-    }
-  }
-
-  changeHandle(event) {
-    const { target } = event;
-    const { name, value } = target;
-    this.setState({
-      [name]: value,
-    })
-  }
-
-  render() {
+   render() {
+    const { estado, onChangeHandler, onMouseEnterHandler } = this.props;
     return (
       <fieldset className="fieldset-ultimo-emprego">
         <legend>Ultimo Emprego:</legend>
         <TextArea
           textAreaLabel="Resumo C.V.:"
           textAreaName="resumo"
-          textAreaOnChange={ this.changeHandle }
-          textAreaValue= { this.state.resumo }
+          textAreaOnChange={ onChangeHandler }
+          textAreaValue= { estado.resumo }
           textAreaLength={ 1000 }
         />
         <TextArea
           textAreaLabel="Cargo:"
           textAreaName="cargo"
-          textAreaOnChange={ this.changeHandle }
-          textAreaValue= { this.state.cargo }
+          textAreaOnChange={ onChangeHandler }
+          textAreaOnMouseEnter = { onMouseEnterHandler }
+          textAreaValue= { estado.cargo }
           textAreaLength={ 40 }
         />
+        <span>{ estado.info }</span>
         <TextArea
           textAreaLabel="Descrição do cargo"
           textAreaName="descricao"
-          textAreaOnChange={ this.changeHandle }
-          textAreaValue= { this.state.descricao }
+          textAreaOnChange={ onChangeHandler}
+          textAreaValue= { estado.descricao }
           textAreaLength={ 500 }
         />
       </fieldset>

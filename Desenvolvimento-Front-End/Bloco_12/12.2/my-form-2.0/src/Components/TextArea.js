@@ -7,7 +7,8 @@ class TextArea extends React.Component {
       textAreaLabel,
       textAreaValue,
       textAreaOnChange,
-      textAreaLength 
+      textAreaLength,
+      textAreaOnMouseEnter
     } = this.props;
     
     return (
@@ -18,6 +19,7 @@ class TextArea extends React.Component {
         value= { textAreaValue }
         onChange={ textAreaOnChange } 
         maxLength={ textAreaLength } 
+        onMouseEnter ={ textAreaOnMouseEnter }
         required/>
       </label>
     );
