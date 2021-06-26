@@ -23,7 +23,9 @@ class PersonalData extends React.Component {
 
   changeHandle(event) {
     const { target } = event;
-    const { name, value } = target;
+    const { name } = target;
+    const value = target.name === 'nome' ? target.value.toUpperCase() : target.value;
+  
     this.setState({
       [name]: value,
     })
