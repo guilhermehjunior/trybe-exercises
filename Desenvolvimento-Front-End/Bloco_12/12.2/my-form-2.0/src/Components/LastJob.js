@@ -1,6 +1,7 @@
 import React from 'react';
 import TextArea from './TextArea';
 import './LastJob.css'
+import PropTypes from 'prop-types';
 
 class LastJob extends React.Component {
    render() {
@@ -34,6 +35,12 @@ class LastJob extends React.Component {
       </fieldset>
     );
   }
+}
+
+LastJob.propTypes = {
+  estado: PropTypes.object.isRequired,
+  onChangeHandler: PropTypes.func.isRequired,
+  onMouseEnterHandler: PropTypes.func.isRequired,
 }
 
 export default LastJob;

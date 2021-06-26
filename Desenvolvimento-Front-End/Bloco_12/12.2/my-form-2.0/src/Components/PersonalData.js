@@ -3,6 +3,7 @@ import Input from './Input';
 import inputsPessoais from '../inputsPessoais';
 import states from '../estados';
 import './PersonalData.css';
+import PropTypes from 'prop-types';
 
 class PersonalData extends React.Component {
     render() {
@@ -53,6 +54,11 @@ class PersonalData extends React.Component {
       </fieldset>
     );
   }
+}
+
+PersonalData.propTypes = {
+  estado: PropTypes.object.isRequired,
+  onChangeHandler: PropTypes.func.isRequired,
 }
 
 export default PersonalData;

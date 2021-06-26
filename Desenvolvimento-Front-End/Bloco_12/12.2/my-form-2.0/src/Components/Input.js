@@ -35,7 +35,11 @@ Input.propTypes = {
   inputName: PropTypes.string.isRequired,
   inputLabel: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
-  inputOnChange: PropTypes.func.isRequired
+  inputOnChange: PropTypes.func.isRequired,
+  inputValue: PropTypes.string,
+  inputMaxLength: PropTypes.number,
+  inputChecked: PropTypes.bool,
+  inputRequired: PropTypes.bool,
 }
 
 export default Input;
