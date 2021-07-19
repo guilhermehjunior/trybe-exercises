@@ -34,7 +34,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4-2: _JavaScript - Array e loop For_
 - [X] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [X] 4-4: _JavaScript - Objetos e funções_
-- [X] 4-5: _Projeto - Playground Functions_
+- [X] 4-5: _Projeto - _[Playground Functions](https://github.com/tryber/sd-012-project-playground-functions/pull/41)_
 
 ##### Bloco 5: JavaScript: DOM, Eventos e Web Storage
 
@@ -62,7 +62,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [X] 7-2: _JavaScript ES6 - Objects_
 - [X] 7-3: _Testes unitários em JavaScript_
-- [X] 7-4: _Projeto - JavaScript Testes Unitários_
+- [X] 7-4: _[Projeto - JavaScript Testes Unitários](https://github.com/tryber/sd-012-project-js-unit-tests/pull/16)_
 
 ##### Bloco 8: JavaScript ES6
 
@@ -70,20 +70,20 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 8-2: _JavaScript ES6 - Higher Order Functions - map e filter_
 - [X] 8-3: _JavaScript ES6 - Higher Order Functions - reduce_
 - [X] 8-4: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
-- [X] 8-5: _Projeto - Zoo functions_
+- [X] 8-5: _[Projeto - Zoo functions](https://github.com/tryber/sd-012-project-zoo-functions/pull/53)_
 
 ##### Bloco 9: Assincronicidade & Callbacks
 
 - [X] 9-1: _JavaScript Assíncrono e Callbacks_
 - [X] 9-2: _JavaScript Promises_
-- [X] 9-3: _[Projeto - Carrinho de Compras]()_
+- [X] 9-3: _[Projeto - Carrinho de Compras](https://github.com/tryber/sd-012-project-shopping-cart/pull/14)_
 
 ##### Bloco 10: Jest
 
 - [X] 10-1: _Primeiros passos no Jest_
 - [X] 10-2: _Jest - Testes Assíncronos_
 - [X] 10-3: _Jest - Simulando comportamentos_
-- [X] 10-4: _[Projeto - Jest Assíncrono e Mocking]()_
+- [X] 10-4: _[Projeto - Jest Assíncrono e Mocking](https://github.com/tryber/sd-012-project-jest/pull/12)_
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
@@ -91,29 +91,29 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 11-1: _'Hello, world!' no React!_
 - [X] 11-2: _Componentes React_
-- [X] 11-3: _[Projeto - Movie Cards Library]()_
+- [X] 11-3: _[Projeto - Movie Cards Library](https://github.com/tryber/sd-012-project-movie-cards-library/pull/36)_
 
 ##### Bloco 12: React
 
 - [X] 12-1: _Components com estado e eventos_
 - [X] 12-2: _Formulários no React_
-- [X] 12-3: _[Projeto - Movie Cards Library Stateful]()_
+- [X] 12-3: _[Projeto - Movie Cards Library Stateful](https://github.com/tryber/sd-012-project-movie-cards-library-stateful/pull/50)_
 
 ##### Bloco 13: React
 
 - [X] 13-1: _[Ciclo de vida de componentes em React](https://github.com/guilhermehjunior/exercise-dog-image)_
 - [X] 13-2: _[React Router](https://github.com/guilhermehjunior/exercise-pokedex-router)_
-- [X] 13-3: _[Projeto - Movie Cards Library CRUD]()_
+- [X] 13-3: _[Projeto - Movie Cards Library CRUD](https://github.com/tryber/sd-012-project-movie-card-library-crud/pull/39)_
 
 ##### Bloco 14: Metodologias Ágeis
 
 - [X] 14-1: _Metodologias Ágeis_
-- [X] 14-2: _[Projeto - Frontend Online Store]()_
+- [X] 14-2: _[Projeto - Frontend Online Store](https://github.com/tryber/sd-12-project-frontend-online-store/pull/226)_
 
 ##### Bloco 15: Testes automatizados com React Testing Library
 
 - [X] 15-1: _[RTL - Primeiros Passos](https://github.com/guilhermehjunior/exercise-todo-list)_
-- [ ] 15-2: _RTL - Mocks e Inputs_
+- [X] 15-2: _[RTL - Mocks e Inputs](https://github.com/guilhermehjunior/exercise-digimon-finders)_
 - [ ] 15-3: _RTL - Testando React Router
 - [ ] 15-4: _[Projeto - Testes em React]()_
 
