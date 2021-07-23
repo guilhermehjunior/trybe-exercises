@@ -69,6 +69,13 @@
         store.dispatch(PREVIOUS_COLOR());
       }
 
+      store.subscribe(() => {
+        const value = document.querySelector('#value');
+        const estado = store.getState();
+        value.innerText = estado.colors[estado.index];
+        const container = document.querySelector('#container');
+        container.style.backgroundColor = estado.colors[estado.index];
+      });
       
     </script>
   </body>
