@@ -36,8 +36,18 @@
         cidade: 'São Paulo',
       };
 
+      function changeName1Action(name, surname) {
+        return { type: 'name1', name, surname};
+      }
+
+      function changeName2Action(name, surname) {
+        return {type: 'name2', name, surname};
+      }
+
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
+          case 'name1':
+            return {...state, nome: action.name, sobrenome: action.surname};
           default:
             return state;
         }
@@ -45,7 +55,8 @@
 
       const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
         switch (action.type) {
-          default:
+          case 'name2':
+            return {...state, nome: action.name, sobrenome: action.surname};
             return state;
         }
       };
@@ -56,6 +67,12 @@
       });
 
       const store = Redux.createStore(reducersCombinados);
+
+      window.onload = () => {
+        setTimeout(() => {
+          //Seu dispatch vem aqui //
+        }, 3000);
+      };
     </script>
   </body>
 </html>
