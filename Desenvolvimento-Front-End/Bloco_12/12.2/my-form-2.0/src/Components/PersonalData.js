@@ -1,38 +1,67 @@
 import React from 'react';
 import Input from './Input';
+import inputsPessoais from '../inputsPessoais';
+import states from '../estados';
+import './PersonalData.css';
+import PropTypes from 'prop-types';
 
 class PersonalData extends React.Component {
-  constructor(props) {
-    super(props);
+    render() {
 
-    this.changeHandle = this.changeHandle.bind(this);
-
-    this.state = {
-      nome: '',
-
-    }
-  }
-
-  changeHandle(event) {
-    const { target } = event;
-    const { name } = target;
-    const value = target.checked === true ? target.checked : target.value;
-    this.setState({
-      [name]: value,
-    })
-  }
-
-  render() {
+    const { estado, onChangeHandler, onBlurHandler } = this.props;
     return (
-      <fieldset>
-        <Input 
-        inputLabel="Nome:"
-        inputType="text"
-        inputName="nome"
-        inputOnChange={ this.changeHandle } />
+      <fieldset className="fieldset-dados-pessoais">
+        <legend>Dados Pessoais:</legend>
+         { inputsPessoais.map((input)=>
+         <Input key={ input.name }
+         inputLabel={ input.label }
+         inputType={ input.type }
+         inputName={ input.name }
+         inputOnChange={ onChangeHandler }
+         inputOnBlur={ onBlurHandler }
+         inputValue={ estado[input.name] } 
+         inputMaxLength={ input.maxLength }
+         inputRequired= { input.isRequired }
+         /> 
+         ) } 
+        <label htmlFor="estado">
+          Estado:
+          <select name="estado" onChange={ onChangeHandler }>
+            {states.map((estado)=> {
+              const [ siglaENome ] = Object.entries(estado);
+            return (
+              <option key={siglaENome[0]} value={ siglaENome[0] }>
+                { siglaENome[1] }
+              </option>
+            );
+            })}
+          </select>
+        </label>
+        <Input
+          inputChecked={ true }
+          inputLabel="Apartamento"
+          inputType="radio"
+          inputName="moradia"
+          inputOnClick={ onChangeHandler }
+          inputValue="Apartamento"
+         /> 
+         <Input
+          inputLabel="Casa"
+          inputType="radio"
+          inputName="moradia"
+          inputOnClick={ onChangeHandler }
+          inputValue="Casa"
+         /> 
+        
       </fieldset>
     );
   }
+}
+
+PersonalData.propTypes = {
+  estado: PropTypes.object.isRequired,
+  onChangeHandler: PropTypes.func.isRequired,
+  
 }
 
 export default PersonalData;
