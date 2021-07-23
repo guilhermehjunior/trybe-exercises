@@ -29,8 +29,8 @@
   <body>
     <div id="container">
       <p>Color: <span id="value">white</span></p>
-      <button id="previous">Previous color</button>
-      <button id="next" onclick={}>Next color</button>
+      <button id="previous"onclick="clickHandlePrevious()">Previous color</button>
+      <button id="next" onclick="clickHandleNext()">Next color</button>
     </div>
     <script>
       const ESTADO_INICIAL = {
@@ -50,11 +50,11 @@
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch(action.type) {
           case 'next':
-            const newState = state.index === state.colors.length - 1 ? { index: 0 }  : { index: state.index + 1 };
+            const newState = state.index === state.colors.length - 1 ? { ...state, index: 0 }  : {...state, index: state.index + 1 };
             return newState;
           case 'previous':
-            const newState = state.index === 0 ? { index: state.colors.length - 1 }  : { index: state.index - 1 };
-            return newState;
+            const newState1 = state.index === 0 ? { ...state, index: state.colors.length - 1 }  : {...state, index: state.index - 1 };
+            return newState1;
           default:
             return state;
         }
