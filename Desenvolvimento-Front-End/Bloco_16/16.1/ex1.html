@@ -30,20 +30,46 @@
     <div id="container">
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
-      <button id="next">Next color</button>
+      <button id="next" onclick={}>Next color</button>
     </div>
     <script>
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+
+      
+      function NEXT_COLOR() {
+        return { type : 'next' }
+      }
+
+      function PREVIOUS_COLOR() {
+        return { type: 'previous' }
+      }
+
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch(action.type) {
+          case 'next':
+            const newState = state.index === state.colors.length - 1 ? { index: 0 }  : { index: state.index + 1 };
+            return newState;
+          case 'previous':
+            const newState = state.index === 0 ? { index: state.colors.length - 1 }  : { index: state.index - 1 };
+            return newState;
           default:
             return state;
         }
       }
       const store = Redux.createStore(reducer);
+
+      function clickHandleNext() {
+        store.dispatch(NEXT_COLOR());
+      }
+
+      function clickHandlePrevious() {
+        store.dispatch(PREVIOUS_COLOR());
+      }
+
+      
     </script>
   </body>
 </html>
