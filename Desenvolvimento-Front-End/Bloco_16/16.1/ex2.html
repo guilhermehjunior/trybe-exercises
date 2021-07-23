@@ -57,6 +57,7 @@
         switch (action.type) {
           case 'name2':
             return {...state, nome: action.name, sobrenome: action.surname};
+          default: 
             return state;
         }
       };
@@ -70,9 +71,24 @@
 
       window.onload = () => {
         setTimeout(() => {
-          //Seu dispatch vem aqui //
+          store.dispatch(changeName1Action('Afonso', 'Solano'));
+          store.dispatch(changeName2Action('Leonel', 'Caldela'));
+          console.log(store.getState())
         }, 3000);
+
       };
+
+      store.subscribe(() => {
+        const name1 = document.querySelector('#nome-1');
+        const surname1 = document.querySelector('#sobrenome-1');
+        const name2 = document.querySelector('#nome-2');
+        const surname2 = document.querySelector('#sobrenome-2');
+        name1.innerHTML = store.getState().meuPrimeiroReducer.nome;
+        surname1.innerHTML = store.getState().meuPrimeiroReducer.sobrenome;
+        name2.innerHTML = store.getState().meuSegundoReducer.nome;
+        surname2.innerHTML = store.getState().meuSegundoReducer.sobrenome;
+      });
+
     </script>
   </body>
 </html>
