@@ -70,3 +70,19 @@ SELECT m.title, b.rating FROM Movies AS m
 INNER JOIN BoxOffice AS b
 ON m.id = b.movie_id
 WHERE m.`year` > 2009;
+
+-- 8
+SELECT `name`, location FROM Theater AS t
+WHERE EXISTS (
+	SELECT *
+    FROM Movies AS m
+    WHERE t.id = m.theater_id
+);
+
+-- 9 
+SELECT `name`, location FROM Theater AS t
+WHERE NOT EXISTS (
+	SELECT *
+    FROM Movies AS m
+    WHERE t.id = m.theater_id
+);
