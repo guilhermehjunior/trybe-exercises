@@ -1,3 +1,16 @@
+-- ENTIDADES: animais, especies, localizacao, cuidadores, gerentes, animal_cuidador
+-- ATRIBUTOS: 
+-- animais: animal_id, nome, sexo, idade, especie_id, localizacao_id
+-- especieis: especie_id, especie
+-- localizcao: localizacao_id, localizacao
+-- gerentes: gerente_id, nome
+-- cuidadores: cuidador_id, nome, gerente_id
+-- animal_cuidador: animal_id, cuidador_id
+-- RELACOES:
+-- animais -> especies, localizacao 1:N
+-- gerentes -> cuidadores 1:N
+-- animais -> cuidadores N:N
+
 CREATE DATABASE IF NOT EXISTS zoo;
 
 USE zoo;
@@ -38,7 +51,7 @@ CREATE TABLE animais(
 CREATE TABLE animal_cuidador(
 	animal_id INT NOT NULL,
     cuidador_id INT NOT NULL,
-    PRIMARY KEY (animal_id, cuidador_id),
+    CONSTRAINT PRIMARY KEY (animal_id, cuidador_id),
     FOREIGN KEY (animal_id) REFERENCES animais(animal_id),
     FOREIGN KEY (cuidador_id) REFERENCES cuidadores(cuidador_id)
 ) ENGINE=InnoDB;
