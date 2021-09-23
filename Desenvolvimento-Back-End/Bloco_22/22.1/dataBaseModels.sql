@@ -34,3 +34,11 @@ CREATE TABLE animais(
     FOREIGN KEY (especie_id) REFERENCES especies(especie_id),
     FOREIGN KEY (localizacao_id) REFERENCES localizacao(localizacao_id)
 )ENGINE=InnoDB;
+
+CREATE TABLE animal_cuidador(
+	animal_id INT NOT NULL,
+    cuidador_id INT NOT NULL,
+    PRIMARY KEY (animal_id, cuidador_id),
+    FOREIGN KEY (animal_id) REFERENCES animais(animal_id),
+    FOREIGN KEY (cuidador_id) REFERENCES cuidadores(cuidador_id)
+) ENGINE=InnoDB;
