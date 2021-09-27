@@ -148,26 +148,26 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 20-1: _Banco de dados SQL_
 - [X] 20-2: _Encontrando dados em um banco de dados_
 - [X] 20-3: _Filtrando dados de forma específica_
-- [ ] 20-4: _Manipulando tabelas_
-- [ ] 20-5: _[Projeto - All For One]()_
+- [X] 20-4: _Manipulando tabelas_
+- [X] 20-5: _Projeto - All For One_
 
 ##### Bloco 21: Bancos de dados relacionais
 
-- [ ] 21-1: _FunÃ§Ãµes mais usadas no SQL_
-- [ ] 21-2: _Descomplicando JOINs e UNIONs_
-- [ ] 21-3: _Stored Routines & Subqueries_
-- [ ] 21-4: _[Projeto - Vocabulary Booster]()_
+- [X] 21-1: _Funções mais usadas no SQL_
+- [X] 21-2: _Descomplicando JOINs e UNIONs_
+- [X] 21-3: _Stored Routines & Subqueries_
+- [X] 21-4: _Projeto - Vocabulary Booster_
 
 ##### Bloco 22: Bancos de dados relacionais
 
-- [ ] 22-1: _Transformando ideias em um modelo de banco de dados_
-- [ ] 22-2: _NormalizaÃ§Ã£o, Formas Normais e Dumps_
-- [ ] 22-2: _Transformando ideias em um modelo de banco de dados - Parte 2_
-- [ ] 22-3: _[Projeto - One For All]()_
+- [X] 22-1: _Transformando ideias em um modelo de banco de dados_
+- [X] 22-2: _Normalização, Formas Normais e Dumps_
+- [X] 22-2: _Transformando ideias em um modelo de banco de dados - Parte 2_
+- [X] 22-3: _Projeto - One For All_
 
-##### Bloco 23: IntroduÃ§Ã£o - NoSQL
+##### Bloco 23: Introdução - NoSQL
 
-- [ ] 23-1: _MongoDB - IntroduÃ§Ã£o_
+- [ ] 23-1: _MongoDB - Introdução_
 - [ ] 23-2: _Filter Operators_
 - [ ] 23-3: _[Projeto - Data Flights]()_
 
@@ -237,19 +237,19 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [ ] 34-1: _[Projeto - Trybeer V2]()_
 
-## CiÃªncia da ComputaÃ§Ã£o :hourglass_flowing_sand:
+## Ciências da Computaçãoo :hourglass_flowing_sand:
 
-##### Bloco 35: IntroduÃ§Ã£o - CiÃªncia da ComputaÃ§Ã£o
+##### Bloco 35: Introduçãoo - Ciência da Computação
 
 - [ ] 35-1: _Arquitetura de Computadores_
 - [ ] 35-2: _Arquitetura de redes_
-- [ ] 35-3: _Redes de computadores, ferramentas e seguranÃ§a_
+- [ ] 35-3: _Redes de computadores, ferramentas e segurança_
 - [ ] 35-4: _[Projeto - Explorando os protocolos]()_
 
 ##### Bloco 36: Python
 
 - [ ] 35-1: _Aprendendo Python_
-- [ ] 35-2: _Testes e Excecoes_
-- [ ] 35-3: _Entrada e SaÃ­da de dados_
-- [ ] 36-4: _Entrada e SaÃ­da de dados_
+- [ ] 35-2: _Testes e Exceções_
+- [ ] 35-3: _Entrada e Saída de dados_
+- [ ] 36-4: _Entrada e Saída de dados_
 - [ ] 35-5: _[Projeto - Tech news]()_
