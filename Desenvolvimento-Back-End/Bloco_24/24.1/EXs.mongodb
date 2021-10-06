@@ -47,3 +47,15 @@ db.movies.updateOne(
 );
 
 // 4
+use('class');
+db.movies.updateOne(
+  { title: "Batman" },
+  { $inc: { imdbRating: 2 } }
+);
+
+// 5
+use('class');
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $inc: { budget: 5 } }
+);
