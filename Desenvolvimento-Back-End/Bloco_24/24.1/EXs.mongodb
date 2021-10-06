@@ -87,3 +87,34 @@ db.movies.updateOne(
   { title: "Godzilla" },
   { $max: { imdbRating: 8.6 }, $set: { "category.1": "thriller" } }
 );
+
+// 10
+use('class');
+db.movies.updateOne(
+  { title: "Home Alone"},
+  { $currentDate: { lastUpdated: { $type: "timestamp" } } }
+);
+
+// 11
+use('class');
+db.movies.updateMany(
+  {},
+  { $set: { sequels: 0 } }
+);
+
+// 12
+use('class');
+db.movies.updateMany(
+  {},
+  { $unset: {
+    estimatedBudget: "",
+    budget: "",
+   }}
+);
+
+// 13
+use('class');
+db.movies.updateMany(
+  { title: {$in: ["Batman", "Home Alone"] } },
+  { $max: { imdbRating: 17} }
+);
