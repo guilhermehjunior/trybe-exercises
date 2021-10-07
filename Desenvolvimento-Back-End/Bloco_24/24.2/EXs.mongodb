@@ -109,12 +109,16 @@ use('class');
 db.movies.updateOne(
   { 
     title: "Home Alone", 
-    "cast.actor":  "Daniel Stern",
   },
   {
     $set: {
-      "cast.$.character": "Marv"
+      "cast.$[a].character": "Marv",
     }
+  },
+  {
+    arrayFilters: [
+      { "a.actor": "Daniel Stern" },
+    ]
   }
 );
 
@@ -146,12 +150,16 @@ use('class');
 db.movies.updateOne(
   { 
     title: "Batman",
-    "cast.character": "Batman",
   },
   { 
     $push: {
-    "cast.$.actor": "Christian Bale"
+    "cast.$[a].actor": "Christian Bale",
     }
+  },
+  {
+    arrayFilters: [
+      { "a.character": "Batman" },
+    ]
   }
 );
 
@@ -159,12 +167,16 @@ use('class');
 db.movies.updateOne(
   { 
     title: "Batman",
-    "cast.character": "Coringa",
   },
   { 
     $push: {
-    "cast.$.actor": "Heath Ledger"
+    "cast.$[a].actor": "Heath Ledger"
     }
+  },
+  {
+    arrayFilters: [
+      { "a.character": "Coringa" },
+    ]
   }
 );
 
@@ -172,12 +184,16 @@ use('class');
 db.movies.updateOne(
   { 
     title: "Batman",
-    "cast.character": "Alfred",
   },
   { 
     $push: {
-    "cast.$.actor": "Michael Caine"
+    "cast.$[a].actor": "Michael Caine"
     }
+  },
+  {
+    arrayFilters: [
+      { "a.character": "Alfred" }
+    ]
   }
 );
 
@@ -190,7 +206,7 @@ db.movies.updateOne(
   },
   { 
     $push: { 
-      "cast.$.actor": { 
+      "cast.$[a].actor": { 
         $each :[
           "Michael Keaton",
           "Val Kilmer",
@@ -199,5 +215,10 @@ db.movies.updateOne(
         $sort: 1,
       }
     }
+  },
+  {
+    arrayFilters: [
+      { "a.character": "Batman" }
+    ]
   }
 );
