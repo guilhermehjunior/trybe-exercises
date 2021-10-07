@@ -202,7 +202,6 @@ use('class');
 db.movies.updateOne(
   { 
     title: "Batman",
-    "cast.character": "Batman"
   },
   { 
     $push: { 
