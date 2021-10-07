@@ -76,3 +76,44 @@ db.movies.updateOne(
   { title: "Batman" },
   { $addToSet: { category: "action" } }
 );
+
+// 7
+use('class');
+db.movies.updateMany(
+  { title: { $in: ["Batman", "Home Alone"] } },
+  { $push: { category: "90's" } },
+);
+
+// 8
+use('class');
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $push: { cast: { $each: [
+      {
+        "actor": "Macaulay Culkin",
+        "character": "Kevin"
+      },
+      {
+        "actor": "Joe Pesci",
+        "character": "Harry"
+      },
+      {
+        "actor": "Daniel Stern"
+      }
+    ]
+  } } }
+);
+
+// 9
+use('class');
+db.movies.updateOne(
+  { 
+    title: "Home Alone", 
+    "cast.actor":  "Daniel Stern",
+  },
+  {
+    $set: {
+      "cast.$.character": "Marv"
+    }
+  }
+);
