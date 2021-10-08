@@ -105,5 +105,54 @@ db.movies.find(
 // 10
 use('class');
 db.movies.find(
-  { category: { $size: 2 } }
+  { category: { $size: 2 } },
+  { title: 1, _id: 0 },
+);
+
+// 11
+use('class');
+db.movies.find(
+  { rating: { $size: 4 } },
+  { title: 1, _id: 0 },
+);
+
+// 12
+use('class');
+db.movies.find(
+  { 
+    budget: { $mod: [5, 0] },
+    category: { $size: 2 }
+  },
+  {},
+);
+
+// 13
+use('class');
+db.movies.find(
+  {
+    $or: [
+      { category: { $all: ["sci-fi"] } },
+      { rating: { $gt: 199 } }
+    ]
+  },
+  { title: 1, rating: 1, category: 1, _id: 0 }
+);
+
+// 14
+use('class');
+db.movies.find(
+  {
+    $and: [
+      { rating: { $size: 4 } },
+      { category: { $in: ["adventure", "family"] } },
+      { imdbRating: { $not: {$lt: 7 } } }
+    ]
+  }
+);
+
+// 15
+use('class');
+db.movies.updateOne(
+  { title: "Batman" },
+  { $set: { description: "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."} },
 );
