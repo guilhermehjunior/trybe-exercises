@@ -68,3 +68,42 @@ db.movies.updateOne(
   { title: "Home Alone" },
   { $push: { rating: { $each: [200, 99, 65] } } },
 );
+
+// 6
+use('class');
+db.movies.find(
+  { rating: { $elemMatch: { $gt: 103 } } },
+  { rating: 1, title: 1, _id: 0 }
+);
+
+// 7
+use('class');
+db.movies.find(
+  { rating: { $elemMatch: { $gt: 100, $lt: 105 } } },
+  { rating: 1, title: 1, _id: 0 }
+);
+
+// 8
+use('class');
+db.movies.find(
+  { 
+    rating: { $elemMatch: { $gte: 64, $lte: 105, $mod: [9, 0] } }
+  },
+  { rating: 1, title: 1, _id: 0 }
+);
+
+// 9
+use('class');
+db.movies.find(
+  { 
+    rating: { $elemMatch: { $gte: 103} },
+    category: { $all: ["adventure"] }
+  },
+  { rating: 1, title: 1, category: 1, _id: 0 }
+);
+
+// 10
+use('class');
+db.movies.find(
+  { category: { $size: 2 } }
+);
