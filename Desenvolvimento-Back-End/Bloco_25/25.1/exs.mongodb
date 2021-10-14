@@ -70,3 +70,87 @@ db.clientes.aggregate([
     }
   }
 ]);
+
+// 7
+use('erp');
+db.clientes.aggregate([
+  {
+    $group: {
+      _id: {
+        sexo: "$sexo",
+        estado: "$endereco.uf"
+        },
+      total: { $sum: 1 },
+    }
+  },
+  {
+    $project: {
+      estado: "$_id.estado",
+      sexo: "$_id.sexo",
+      total: "$total",
+      _id: 0,
+    },
+  },
+]);
+
+// 8
+use('erp');
+db.vendas.aggregate([
+  {
+    $lookup: {
+      from: "clientes",
+      localField: "clienteId",
+      foreignField: "clienteId",
+      as:"cliente"
+    }
+  },
+  {
+    $group: {
+      _id: "$cliente.nome",
+      gastoTotal: { $sum: "$valorTotal"},
+    },
+  },
+  {
+    $sort: {
+      gastoTotal: -1
+    },
+  },
+  {
+    $limit: 5
+  },
+]);
+
+// 9 
+use('erp');
+db.vendas.aggregate([
+  {
+    $lookup: {
+      from: "clientes",
+      localField: "clienteId",
+      foreignField: "clienteId",
+      as:"cliente"
+    }
+  },
+  {
+    $match: { 
+      dataVenda: {
+        $gte: ISODate('2019-01-01'),
+        $lte: ISODate('2019-12-31'),
+      },
+    }
+  },
+  {
+    $group: {
+      _id: "$cliente.nome",
+      gastoTotal: { $sum: "$valorTotal"},
+    },
+  },
+  {
+    $sort: {
+      gastoTotal: -1
+    },
+  },
+  {
+    $limit: 10
+  },
+]);
