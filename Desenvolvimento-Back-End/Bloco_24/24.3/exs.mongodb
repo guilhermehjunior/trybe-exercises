@@ -1,0 +1,206 @@
+use('class');
+db.movies.drop();
+db.movies.insertMany([
+  {
+    title: "Batman",
+    category: [
+      "action",
+      "adventure"
+    ],
+    imdbRating: 7.7,
+    budget: 35
+  },
+  {
+    title: "Godzilla",
+    category: [
+      "action",
+      "adventure",
+      "sci-fi"
+    ],
+    imdbRating: 6.6,
+    budget: 10
+  },
+  {
+    title: "Home Alone",
+    category: [
+      "family",
+      "comedy"
+    ],
+    imdbRating: 7.4
+  }
+]);
+
+use('class');
+db.movies.find();
+
+// 1
+use('class');
+db.movies.find(
+  { category: { $all: ["action", "adventure"] } }
+);
+
+// 2
+use('class');
+db.movies.find(
+  { 
+    category: { $all : ["action"] },
+    imdbRating: { $gt: 7 }
+  }
+);
+
+// 3
+use('class');
+db.movies.updateOne(
+  { title: "Batman" },
+  { $push: { rating: { $each: [85, 100, 102, 105] } } },
+);
+
+// 4
+use('class');
+db.movies.updateOne(
+  { title: "Godzilla" },
+  { $push: { rating: { $each: [78, 52, 95, 102] } } },
+);
+
+// 5
+use('class');
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $push: { rating: { $each: [200, 99, 65] } } },
+);
+
+// 6
+use('class');
+db.movies.find(
+  { rating: { $elemMatch: { $gt: 103 } } },
+  { rating: 1, title: 1, _id: 0 }
+);
+
+// 7
+use('class');
+db.movies.find(
+  { rating: { $elemMatch: { $gt: 100, $lt: 105 } } },
+  { rating: 1, title: 1, _id: 0 }
+);
+
+// 8
+use('class');
+db.movies.find(
+  { 
+    rating: { $elemMatch: { $gte: 64, $lte: 105, $mod: [9, 0] } }
+  },
+  { rating: 1, title: 1, _id: 0 }
+);
+
+// 9
+use('class');
+db.movies.find(
+  { 
+    rating: { $elemMatch: { $gte: 103} },
+    category: { $all: ["adventure"] }
+  },
+  { rating: 1, title: 1, category: 1, _id: 0 }
+);
+
+// 10
+use('class');
+db.movies.find(
+  { category: { $size: 2 } },
+  { title: 1, _id: 0 },
+);
+
+// 11
+use('class');
+db.movies.find(
+  { rating: { $size: 4 } },
+  { title: 1, _id: 0 },
+);
+
+// 12
+use('class');
+db.movies.find(
+  { 
+    budget: { $mod: [5, 0] },
+    category: { $size: 2 }
+  },
+  {},
+);
+
+// 13
+use('class');
+db.movies.find(
+  {
+    $or: [
+      { category: { $all: ["sci-fi"] } },
+      { rating: { $gt: 199 } }
+    ]
+  },
+  { title: 1, rating: 1, category: 1, _id: 0 }
+);
+
+// 14
+use('class');
+db.movies.find(
+  {
+    $and: [
+      { rating: { $size: 4 } },
+      { category: { $in: ["adventure", "family"] } },
+      { imdbRating: { $not: {$lt: 7 } } }
+    ]
+  }
+);
+
+// 15
+use('class');
+db.movies.updateOne(
+  { title: "Batman" },
+  { $set: { description: "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."} },
+);
+
+// 16
+use('class');
+db.movies.updateOne(
+  { title: "Godzilla" },
+  { $set: { description: "The world is beset by the appearance of monstrous creatures, but one of them may be the only one who can save humanity."} },
+);
+
+// 17
+use('class');
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $set: { description: "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation."} },
+);
+
+// 18
+use('class');
+db.movies.find(
+  { description: { $regex:  /^The/}}
+);
+
+// 19
+use('class');
+db.movies.find(
+  { description: { $regex:  /humanity\.$/}}
+);
+
+// 20
+use('class');
+db.movies.createIndex({ description: "text" });
+
+// 21
+use('class');
+db.movies.find(
+  { $text: { $search: "vacation" } }
+);
+
+// 22
+use('class');
+db.movies.find(
+  { $text: { $search: "monstrous criminal" } }
+);
+
+// 23
+use('class');
+db.movies.find(
+  { $text: { $search: "\"when he is accidentally\"" } }
+);
