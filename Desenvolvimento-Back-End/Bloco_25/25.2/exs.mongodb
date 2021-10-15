@@ -142,4 +142,31 @@ db.vendas.aggregate([
       dataEntregaPrevista: 1,
     },
   },
+  // 9
+  {
+    $group: {
+      _id:null,
+      maiorData: {
+        $max: "$dataEntregaPrevista"
+      },
+      menorData: {
+        $min: "$dataEntregaPrevista"
+      }
+    }
+  },
+  { 
+    $project: {
+      diferencaDias: {
+        $round: [{
+          $divide: [{
+            $abs: {
+              $subtract: [
+              "$maiorData", "$menorData"
+              ]
+            }
+          }, 86400000]
+        }]
+      }
+    }
+  }
 ]);
