@@ -45,4 +45,15 @@ db.clientes.aggregate([
       as: "compras",
     },
   },
+  // 4
+  {
+    $match: {
+      "compras.dataVenda": {
+        $gte: ISODate('2019-06-01'),
+        $lte: ISODate('2020-03-01'),
+      }
+    }
+  }
 ]);
+
+
