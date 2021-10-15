@@ -12,5 +12,13 @@ db.clientes.aggregate([
         }
       } 
     }
+  },
+  // 2
+  {
+    $match: {idade: {$gte: 18, $lte: 25}}
+  },
+  {
+    $count: "totalPessoasEntre18e25"
   }
 ]);
+
