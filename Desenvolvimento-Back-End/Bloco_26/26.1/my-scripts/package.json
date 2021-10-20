@@ -9,6 +9,7 @@
     "velocidade": "node velocidade.js",
     "sorteio": "node sorteio.js",
     "fatorial": "node fatorial.js",
+    "fibonaci": "node fibonaci.js",
     "start": "node index.js"
   },
   "keywords": [],
