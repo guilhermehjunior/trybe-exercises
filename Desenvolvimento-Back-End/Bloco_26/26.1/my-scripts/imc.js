@@ -23,3 +23,5 @@ function imc() {
 }
 
 imc();
+
+module.exports = imc;

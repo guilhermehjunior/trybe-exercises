@@ -16,4 +16,5 @@ function fazendoSorteio(){
 
 fazendoSorteio();
 
+module.exports = fazendoSorteio;
 
