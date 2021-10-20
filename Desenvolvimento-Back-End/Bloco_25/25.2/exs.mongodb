@@ -1,0 +1,172 @@
+// 1
+use('erp');
+db.clientes.aggregate([
+  {
+    $addFields: {
+      idade: {
+        $floor: {
+          $divide: [
+            {$subtract: ["$$NOW", "$dataNascimento"]},
+            86400000 * 365
+          ]
+        }
+      } 
+    }
+  },
+  // 2
+  {
+    $match: {idade: {$gte: 18, $lte: 25}}
+  },
+  {
+    $count: "totalPessoasEntre18e25"
+  }
+]);
+
+// 3
+use('erp');
+db.clientes.aggregate([
+  {
+    $addFields: {
+      idade: {
+        $floor: {
+          $divide: [
+            {$subtract: ["$$NOW", "$dataNascimento"]},
+            86400000 * 365
+          ]
+        }
+      } 
+    }
+  },
+  {
+    $lookup: {
+      from:"vendas",
+      localField: "clienteId",
+      foreignField: "clienteId",
+      as: "compras",
+    },
+  },
+  // 4
+  {
+    $match: {
+      "compras.dataVenda": {
+        $gte: ISODate('2019-06-01'),
+        $lte: ISODate('2020-03-01'),
+      }
+    }
+  },
+  // 6
+  {
+    $group: {
+      _id: "$endereco.uf",
+      totalCompras: { $sum: 1 },
+    },
+  },
+  {
+    $sort: { totalCompras: -1 },
+  },
+  {
+    $limit: 5,
+  }
+  // 5
+]).itcount();
+
+
+// 7
+use('erp');
+db.vendas.aggregate([
+  {
+    $unwind: "$itens",
+  },
+  {
+    $match: {
+      "itens.nome": "QUEIJO PRATO"
+    }
+  },
+  {
+    $group: {
+      _id: "$clienteId",
+      totalDeQueijoPrato: { $sum: "$itens.quantidade" },
+    }
+  },
+  {
+    $lookup: {
+      from: "clientes",
+      localField: "_id",
+      foreignField: "clienteId",
+      as: "cliente"
+    }
+  },
+  {
+    $unwind: "$cliente",
+  },
+  {
+    $project: {
+      _id: 0,
+      nomeCliente: "$cliente.nome",
+      uf: "$cliente.endereco.uf",
+      totalConsumido: "$totalDeQueijoPrato"
+    }
+  },
+  {
+    $sort: { totalConsumido: -1 },
+  },
+  {
+    $limit: 1,
+  }
+]);
+
+// 8
+use('erp');
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: {
+        $gte: ISODate('2020-03-01'),
+        $lte: ISODate('2020-03-31'),
+      },
+      status: "EM SEPARACAO"
+    }
+  },
+  {
+    $addFields: {
+      dataEntregaPrevista: {
+        $add: ["$dataVenda", 86400000 * 3]
+      },
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      clienteId: 1,
+      dataVenda: 1,
+      dataEntregaPrevista: 1,
+    },
+  },
+  // 9
+  {
+    $group: {
+      _id:null,
+      maiorData: {
+        $max: "$dataEntregaPrevista"
+      },
+      menorData: {
+        $min: "$dataEntregaPrevista"
+      }
+    }
+  },
+  { 
+    $project: {
+      diferencaDias: {
+        $round: [{
+          $divide: [{
+            $abs: {
+              $subtract: [
+              "$maiorData", "$menorData"
+              ]
+            }
+          }, 86400000]
+        }]
+      }
+    }
+  }
+]);
