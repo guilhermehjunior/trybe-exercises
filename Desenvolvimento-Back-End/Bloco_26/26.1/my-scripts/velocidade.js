@@ -13,7 +13,7 @@ function velocidadeMedia(distancia, tempo){
   return velocidade;
 }
 
-velocidade();
+// velocidade();
 
 module.exports = velocidade;
 

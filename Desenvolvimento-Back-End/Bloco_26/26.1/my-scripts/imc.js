@@ -22,6 +22,6 @@ function imc() {
   tabelaIMC(imc);
 }
 
-imc();
+// imc();
 
 module.exports = imc;

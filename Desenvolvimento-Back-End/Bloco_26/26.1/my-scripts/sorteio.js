@@ -14,7 +14,7 @@ function fazendoSorteio(){
   } else console.log('Obrigado por participar');
 }
 
-fazendoSorteio();
+// fazendoSorteio();
 
 module.exports = fazendoSorteio;
 
