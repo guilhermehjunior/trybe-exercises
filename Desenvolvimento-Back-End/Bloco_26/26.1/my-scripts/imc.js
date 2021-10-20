@@ -1,15 +1,25 @@
 const readline = require('readline-sync');
 
-const peso = readline.questionFloat('Qual seu peso? ');
-const altura = readline.questionFloat('Qual sua altura?' );
+function calculaIMC(peso, altura){
+  return peso / (altura * altura);
+}
 
-const imc = peso / (altura * altura);
+function tabelaIMC(imc) {
+  if (imc < 18.5) console.log('Abaixo do peso');
+  else if (imc < 24.9) console.log('Peso Normal');
+  else if (imc < 29.9) console.log('Acima do Peso');
+  else if (imc < 34.9) console.log('Obesidade grau I');
+  else if (imc < 39.9) console.log('Obesidade grau II');
+  else console.log('Obesidade Grau III e IV');
+}
 
-console.log(`IMC de ${imc}`);
+function imc() {
+  const peso = readline.questionFloat('Qual seu peso? ');
+  const altura = readline.questionFloat('Qual sua altura?' );
 
-if (imc < 18.5) console.log('Abaixo do peso');
-else if (imc < 24.9) console.log('Peso Normal');
-else if (imc < 29.9) console.log('Acima do Peso');
-else if (imc < 34.9) console.log('Obesidade grau I');
-else if (imc < 39.9) console.log('Obesidade grau II');
-else console.log('Obesidade Grau III e IV');
+  const imc = calculaIMC(peso, altura);
+  console.log(`IMC de ${imc}`);
+  tabelaIMC(imc);
+}
+
+imc();
