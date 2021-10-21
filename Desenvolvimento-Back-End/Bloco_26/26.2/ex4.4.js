@@ -1,6 +1,5 @@
 const fs = require('fs').promises;
 
-
 async function creatingNewSimpsonsFile() {
   try {
     const result = await fs.readFile('./simpsons.json', 'utf-8');
