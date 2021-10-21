@@ -6,10 +6,8 @@ async function creatingNewSimpsonsFile() {
     const simpsons = JSON.parse(result);
     const newSimpsons = [];
     simpsons.forEach((simpson) => {
-      for (let index = 1; index <= 4; index += 1) {
-        if (simpson.id == index) {
-          newSimpsons.push(simpson);
-        }
+      if (["1","2","3","4"].includes(simpson.id)) {
+        newSimpsons.push(simpson);
       }
     });
     await fs.writeFile('./simpsonFamily.json', JSON.stringify(newSimpsons));
