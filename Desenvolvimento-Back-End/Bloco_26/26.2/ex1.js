@@ -10,3 +10,5 @@ function returnPromise(param1, param2, param3) {
   });
   return promise;
 }
+
+module.exports = returnPromise;
