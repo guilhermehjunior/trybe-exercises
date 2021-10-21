@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bonus1": "node bonus1.js"
+    "bonus1": "node bonus1.js",
+    "bonus2": "node bonus2.js"
   },
   "author": "Guilherme Jr",
   "license": "ISC",
