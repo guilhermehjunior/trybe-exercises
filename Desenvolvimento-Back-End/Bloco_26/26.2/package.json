@@ -1,0 +1,15 @@
+{
+  "name": "26.2",
+  "version": "1.0.0",
+  "description": "exercicios dia 26.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bonus1": "node bonus1.js"
+  },
+  "author": "Guilherme Jr",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
