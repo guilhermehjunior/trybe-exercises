@@ -5,6 +5,6 @@ function randomNumber() {
   return random;
 }
 
-returnPromise('a', randomNumber(), randomNumber())
+returnPromise(randomNumber(), randomNumber(), randomNumber())
   .then((result) => console.log(`O resultado foi: ${result}`))
   .catch((error) => console.log(error.message));
