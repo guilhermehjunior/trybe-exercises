@@ -9,8 +9,8 @@ function numberSignal(number) {
 
 function writingFile(file, content) {
   try {
-    const response = fs.writeFileSync(file, content);
-    return response;
+    fs.writeFileSync(file, content);
+    return 'ok';
   } catch(e) {
     return null;
   }

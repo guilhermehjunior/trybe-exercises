@@ -1,12 +1,12 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 const fs = require('fs');
+const { writingFile } = require('../index');
 
 describe('Testes para funcao de escrever texto em um arquivo', () => {
   describe('Verifica se o arquivo existe', () => {
     before(() => {
-      sinon.stub(fs, 'writeFileSync')
-        .returns('ok');
+      sinon.stub(fs, 'writeFileSync');
     });
   
     after(() => {
