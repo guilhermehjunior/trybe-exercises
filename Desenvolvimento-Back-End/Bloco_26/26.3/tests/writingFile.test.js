@@ -18,10 +18,10 @@ describe('Testes para funcao de escrever texto em um arquivo', () => {
     });
   });
 
-  describe('Verifica se o arquivo nao existe', () => {
+  describe('Verifica se houve algum erro', () => {
     before(() => {
       sinon.stub(fs, 'writeFileSync')
-        .throws(new Error('Arquivo nao encontrado'));
+        .throws(new Error('Nao foi possivel escrever no arquivo desejado'));
     });
 
     after(() => {
