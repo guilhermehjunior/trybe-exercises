@@ -2,6 +2,7 @@ const express = require('express');
 const rescue = require('express-rescue');
 const bodyParser = require('body-parser');
 const { readSimpsons, writeSimpsons } = require('./simpsonsUtils');
+const generateToken = require('./crypto');
 
 const app = express();
 
@@ -68,6 +69,13 @@ app.post('/simpsons', rescue(async (req, res) => {
   await writeSimpsons(simpsons);
   res.status(204).end();
 }));
+
+// bonus2
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+  if (!email || !password || !firstName || !phone) return res.status(401).json({ message: 'missing fields' });
+  return res.status(200).json({ token: generateToken() });
+});
 
 app.use((err, req, res, next) => {
   res.status(500)
