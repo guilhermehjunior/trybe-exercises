@@ -16,6 +16,15 @@ app.post('/hello', (req, res) => {
   res.status(201).json({ message: `Hello, ${name}!` });
 });
 
+// 3
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+  if(age > 17) return res.status(200).json({ message: `Hello, ${name}!` });
+  res.status(401).json({ message: 'Unauthorized' });
+});
+
+// 4
+
 app.listen(3000, () => {
   console.log('Rodando aplicacao na porta 3000');
 });
