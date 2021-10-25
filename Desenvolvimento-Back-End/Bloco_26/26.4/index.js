@@ -6,12 +6,21 @@ const { readSimpsons, writeSimpsons } = require('./simpsonsUtils');
 const app = express();
 
 app.use(bodyParser.json());
-app.use((err, req, res, next) => {
-  res.status(500)
-     .json({ error: 'i have a bad feeling about this'})
-})
+
+// bonus1
+const auth = (req, res, next) => {
+  const { authorization } = req.headers;
+  if ( !authorization || authorization.length !== 16) return res.status(401).json({ message: 'Token inválido!' });
+  next();
+};
+
+app.use(auth);
 
 // 1
+// app.get('/ping', auth, (req, res) => {
+//   res.status(200).json({ message: 'pong' });
+// });
+
 app.get('/ping', (req, res) => {
   res.status(200).json({ message: 'pong' });
 });
@@ -59,6 +68,11 @@ app.post('/simpsons', rescue(async (req, res) => {
   await writeSimpsons(simpsons);
   res.status(204).end();
 }));
+
+app.use((err, req, res, next) => {
+  res.status(500)
+     .json({ error: 'i have a bad feeling about this'})
+});
 
 app.listen(3000, () => {
   console.log('Rodando aplicacao na porta 3000');
