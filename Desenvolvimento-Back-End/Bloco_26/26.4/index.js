@@ -36,10 +36,12 @@ app.get('/simpsons', async (req, res) => {
 });
 
 // 7
-app.get('/simpsons/:id', (req, res) => {
+app.get('/simpsons/:id', async (req, res) => {
   const { id } = req.params;
-  const simpson = JSON.parse(simpsons).find((simpson) => parseInt(simpson.id, 10) === parseInt(id,10));
-  if (!simpson) return res.status(404)
+  const simpsons = await readSimpsons();
+  const simpson = simpsons.find((simpson) => parseInt(simpson.id, 10) === parseInt(id, 10));
+  if (!simpson) return res.status(404).json({ message: 'simpson not found' });
+  res.status(200).json(simpson);
 });
 
 app.listen(3000, () => {
