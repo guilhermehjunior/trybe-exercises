@@ -50,6 +50,15 @@ app.get('/simpsons/:id', rescue(async (req, res) => {
 }));
 
 // 8
+app.post('/simpsons', rescue(async (req, res) => {
+  const { id, name } = req.body;
+  const simpsons = await readSimpsons();
+  const simpson = simpsons.find((simpson) => parseInt(simpson.id, 10) === parseInt(id, 10));
+  if(simpson) return res.status(409).json({ message: 'id already exists' } );
+  simpsons.push({ id, name });
+  await writeSimpsons(simpsons);
+  res.status(204).end();
+}));
 
 app.listen(3000, () => {
   console.log('Rodando aplicacao na porta 3000');
