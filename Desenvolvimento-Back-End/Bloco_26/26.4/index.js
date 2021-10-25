@@ -24,6 +24,10 @@ app.post('/greetings', (req, res) => {
 });
 
 // 4
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+  res.status(200).json({ message: `Seu nome e ${name} e voce tem ${age} anos de idade!` })
+});
 
 app.listen(3000, () => {
   console.log('Rodando aplicacao na porta 3000');
