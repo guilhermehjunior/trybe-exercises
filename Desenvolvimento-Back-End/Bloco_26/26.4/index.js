@@ -1,10 +1,15 @@
 const express = require('express');
+const rescue = require('express-rescue');
 const bodyParser = require('body-parser');
 const readSimpsons = require('./simpsonsUtils');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use((err, req, res, next) => {
+  res.status(500)
+     .json({ error: 'i have a bad feeling about this'})
+})
 
 // 1
 app.get('/ping', (req, res) => {
@@ -31,18 +36,20 @@ app.put('/users/:name/:age', (req, res) => {
 });
 
 // 5 e 6
-app.get('/simpsons', async (req, res) => {
+app.get('/simpsons', rescue(async (req, res) => {
   res.status(200).json(await readSimpsons());
-});
+}));
 
 // 7
-app.get('/simpsons/:id', async (req, res) => {
+app.get('/simpsons/:id', rescue(async (req, res) => {
   const { id } = req.params;
   const simpsons = await readSimpsons();
   const simpson = simpsons.find((simpson) => parseInt(simpson.id, 10) === parseInt(id, 10));
   if (!simpson) return res.status(404).json({ message: 'simpson not found' });
   res.status(200).json(simpson);
-});
+}));
+
+// 8
 
 app.listen(3000, () => {
   console.log('Rodando aplicacao na porta 3000');
