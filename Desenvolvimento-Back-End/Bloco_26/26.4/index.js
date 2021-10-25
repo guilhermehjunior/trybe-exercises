@@ -1,7 +1,7 @@
 const express = require('express');
 const rescue = require('express-rescue');
 const bodyParser = require('body-parser');
-const readSimpsons = require('./simpsonsUtils');
+const { readSimpsons, writeSimpsons } = require('./simpsonsUtils');
 
 const app = express();
 

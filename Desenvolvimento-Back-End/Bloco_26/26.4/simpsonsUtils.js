@@ -5,4 +5,8 @@ const readSimpsons = async () => {
   return JSON.parse(simpsons);
 };
 
-module.exports = readSimpsons;
+const writeSimpsons = async (simpsons) => {
+  await fs.writeFile('./simpsons.json', JSON.stringify(simpsons));
+};
+
+module.exports = { readSimpsons, writeSimpsons };
