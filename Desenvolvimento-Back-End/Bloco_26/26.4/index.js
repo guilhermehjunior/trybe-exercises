@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs').promises;
-const simpsons = require('./simpsons.json');
+const readSimpsons = require('./simpsonsUtils');
 
 const app = express();
 
@@ -32,8 +31,8 @@ app.put('/users/:name/:age', (req, res) => {
 });
 
 // 5 e 6
-app.get('/simpsons', (req, res) => {
-  res.status(200).json(simpsons);
+app.get('/simpsons', async (req, res) => {
+  res.status(200).json(await readSimpsons());
 });
 
 // 7
