@@ -36,6 +36,13 @@ app.get('/simpsons', (req, res) => {
   res.status(200).json(simpsons);
 });
 
+// 7
+app.get('/simpsons/:id', (req, res) => {
+  const { id } = req.params;
+  const simpson = JSON.parse(simpsons).find((simpson) => parseInt(simpson.id, 10) === parseInt(id,10));
+  if (!simpson) return res.status(404)
+});
+
 app.listen(3000, () => {
   console.log('Rodando aplicacao na porta 3000');
 });
