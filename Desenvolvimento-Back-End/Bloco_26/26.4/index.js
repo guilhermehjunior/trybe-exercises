@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs').promises;
+const simpsons = require('./simpsons.json');
 
 const app = express();
 
@@ -27,6 +29,11 @@ app.post('/greetings', (req, res) => {
 app.put('/users/:name/:age', (req, res) => {
   const { name, age } = req.params;
   res.status(200).json({ message: `Seu nome e ${name} e voce tem ${age} anos de idade!` })
+});
+
+// 5 e 6
+app.get('/simpsons', (req, res) => {
+  res.status(200).json(simpsons);
 });
 
 app.listen(3000, () => {
