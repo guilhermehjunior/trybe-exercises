@@ -1,0 +1,1 @@
+{"teams":[{"name":"Guilherme Junior","initials":"GJ","country":"Brazil","league":"Out"}]}
