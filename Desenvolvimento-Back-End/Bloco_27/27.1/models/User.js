@@ -1,3 +1,4 @@
+const { ObjectId } = require('bson');
 const connection = require('./connection');
 
 const serialize = (result) => ({
@@ -38,8 +39,15 @@ const getUsers = async () => {
   return result.length ? result.map(serialize) : [];
 }
 
+const getUserById = async (id) => {
+  const db = await connection();
+  const result = await db.collection('user').findOne({ _id: new ObjectId(id)});
+  return result ? serialize(result) : null;
+}
+
 module.exports = {
   isValid,
   postUser,
-  getUsers
+  getUsers,
+  getUserById,
 };
