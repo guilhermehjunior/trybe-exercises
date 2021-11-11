@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { isValid, postUser } = require('./models/User');
+const { isValid, postUser, getUsers } = require('./models/User');
 
 const app = express();
 const port = 3000;
@@ -19,6 +19,16 @@ app.post('/user', async(req, res, next) => {
     next(err);
   }
   
+});
+
+app.get('/user', async (req, res, next) => {
+  try {
+    const users = await getUsers();
+    res.status(201).json(users);
+  } catch (err) {
+    next(err);
+  }
+
 });
 
 app.use((err, req, res, next) => {
