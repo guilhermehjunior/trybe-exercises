@@ -1,5 +1,6 @@
-const bodyParser = require('body-parser');
 const express = require('express');
+const bodyParser = require('body-parser');
+const { isValid, postUser } = require('./models/User');
 
 const app = express();
 const port = 3000;
@@ -8,7 +9,12 @@ app.use(bodyParser.json());
 
 app.post('/user', async(req, res, next) => {
   try {
-    const { firstNAme, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
+    if (!isValid({ firstName, lastName, email, password })) {
+      return res.status(401).json({ message: 'Dados invalidos'});
+    }
+    const user = await postUser(firstName, lastName, email, password);
+    res.status(201).json(user);
   } catch (err){
     next(err);
   }
