@@ -6,8 +6,18 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-app.post('/user', async(req, res) => {
-  const { firstNAme, lastName, email, password } = req.body;
+app.post('/user', async(req, res, next) => {
+  try {
+    const { firstNAme, lastName, email, password } = req.body;
+  } catch (err){
+    next(err);
+  }
+  
+});
+
+app.use((err, req, res, next) => {
+  console.log(err.message);
+  res.status(500).end();
 });
 
 app.listen(port, () => {
