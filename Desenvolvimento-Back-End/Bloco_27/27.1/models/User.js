@@ -37,12 +37,38 @@ const getUsers = async () => {
   const db = await connection();
   const result = await db.collection('user').find().toArray();
   return result.length ? result.map(serialize) : [];
-}
+};
 
 const getUserById = async (id) => {
   const db = await connection();
   const result = await db.collection('user').findOne({ _id: new ObjectId(id)});
   return result ? serialize(result) : null;
+};
+
+const updateUserById = async (id, user) => {
+  if(!isValid(user)) return {
+      error: true,
+      message: "Dados invalidos"
+  };
+  const { firstName, lastName, email, password } = user;
+
+  const db = await connection();
+  const result = await db.collection('user').updateOne(
+    { _id: new ObjectId(id) },
+    { $set: {
+      firstName,
+      lastName,
+      email,
+      password,
+    }},
+  );
+  const usuario = {
+    id: result.insertedId,
+    firstName,
+    lastName,
+    email,
+  }
+  return usuario;
 }
 
 module.exports = {
@@ -50,4 +76,5 @@ module.exports = {
   postUser,
   getUsers,
   getUserById,
+  updateUserById,
 };

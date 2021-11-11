@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { isValid, postUser, getUsers, getUserById } = require('./models/User');
+const { isValid, postUser, getUsers, getUserById, updateUserById } = require('./models/User');
 
 const app = express();
 const port = 3000;
@@ -34,6 +34,20 @@ app.get('/user/:id', async(req, res, next) => {
   try {
     const { id } = req.params;
     const user = await getUserById(id);
+    user ? res.status(200).json(user)
+        : res.status(400).json({
+            "error": true,
+            "message": "Usuário não encontrado"
+          });
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.put('/user/:id', async(req, res, next) => {
+  try {
+    const { id } = req.params;
+    const user = await updateUserById(id, req.body);
     user ? res.status(200).json(user)
         : res.status(400).json({
             "error": true,
