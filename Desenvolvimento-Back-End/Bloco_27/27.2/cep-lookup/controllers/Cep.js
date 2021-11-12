@@ -18,7 +18,7 @@ const postCep = async (req, res, next) => {
     if (cepPostado.error) return res.status(cepPostado.code).json({ error: cepPostado.error });
     res.status(cepPostado.code).json(cepPostado.postedCep);
   } catch (err) {
-    next(err.message);
+    next(err);
   }
 }
 

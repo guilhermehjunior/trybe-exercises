@@ -8,7 +8,7 @@ const connection = () => {
   : mysql.createPool({
     host: 'localhost',
     user: 'guitrybe',
-    password: 'a4s5d6f0',
+    password: 'nope',
     database: 'cep_lookup'
   });
 };
