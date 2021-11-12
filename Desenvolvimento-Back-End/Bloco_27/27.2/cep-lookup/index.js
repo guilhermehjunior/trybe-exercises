@@ -13,7 +13,7 @@ app.get('/ping', (_req, res) => {
 
 app.get('/cep/:cep', Cep.getCepByCep);
 
-app.post('/cep',);
+app.post('/cep', Cep.postCep);
 
 app.listen(PORT, () => {
   console.log(`ON PORT ${PORT}`);

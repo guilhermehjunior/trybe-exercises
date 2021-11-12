@@ -34,7 +34,7 @@ const postCep = async(objeto) => {
   const joiValidation = schema.validate(objeto);
   if (joiValidation.error) return { code: 400, error: { code: 'invalidData', message: joiValidation.error } };
   const postedCep = await Cep.postCep(objeto);
-  return postedCep;
+  return { code: 201, postedCep };;
 };
 
 module.exports = {
