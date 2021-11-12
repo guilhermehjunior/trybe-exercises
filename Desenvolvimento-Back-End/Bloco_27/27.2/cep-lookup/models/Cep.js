@@ -1,8 +1,7 @@
 const connection = require('./connection');
 
-const getCepByCep = (cep) => {
+const getCepByCep = async (cep) => {
   const [cepEncontrado] = await connection().execute('SELECT * FROM ceps WHERE cep = ?', [cep]);
-  if (cepEncontrado.length === 0) return null;
   return cepEncontrado;
 };
 

@@ -1,5 +1,8 @@
+const Cep = require('../models/Cep');
+
 const errors = {
   cep_format: "CEP inválido",
+  no_cep: "CEP não encontrado",
 }
 const cepValidation = (cep) => {
   const regex = /\d{5}-?\d{3}/;
@@ -7,8 +10,10 @@ const cepValidation = (cep) => {
 };
 
 const getCepByCep = async (cep) => {
-  if(cepValidation(cep)) return { error: { code: 'invalidData', message: errors.cep_format } };
-  return cep;
+  if(cepValidation(cep)) return { code: 400, error: { code: 'invalidData', message: errors.cep_format } };
+  const cepEncontrado = await Cep.getCepByCep(cep);
+  if (cepEncontrado.length === 0) return { code: 404, error: { code: 'notFound', message: errors.no_cep } };
+  return { code: 200, cep: cepEncontrado[0] };
 };
 
 module.exports = {
