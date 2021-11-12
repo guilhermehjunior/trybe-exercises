@@ -5,6 +5,14 @@ const getCepByCep = async (cep) => {
   return cepEncontrado;
 };
 
+const postCep = async (objeto) => {
+  const { cep, logradouro, bairro, localidade, uf } = objeto;
+  const result = await connection().execute('INSERT INTO ceps VALUES(?, ?, ?, ?, ?)', [cep],[logradouro],[bairro],[localidade], [uf]);
+  console.log(result);
+  return objeto;
+};
+
 module.exports = {
   getCepByCep,
+  postCep,
 };
