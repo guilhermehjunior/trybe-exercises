@@ -5,8 +5,8 @@ const errors = {
   no_cep: "CEP não encontrado",
 }
 const cepValidation = (cep) => {
-  const regex = /\d{5}-?\d{3}/;
-  return !regex.test(cep);
+  const regex = /^[0-9]{5}-?\d{3}$/;
+  return !regex.test(cep);;
 };
 
 const getCepByCep = async (cep) => {
