@@ -6,7 +6,7 @@ const cepValidation = (cep) => {
   return !regex.test(cep);
 };
 
-const getCepByCep = (cep) => {
+const getCepByCep = async (cep) => {
   if(cepValidation(cep)) return { error: { code: 'invalidData', message: errors.cep_format } };
   return cep;
 };
