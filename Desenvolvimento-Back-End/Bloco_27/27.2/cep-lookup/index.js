@@ -15,6 +15,11 @@ app.get('/cep/:cep', Cep.getCepByCep);
 
 app.post('/cep', Cep.postCep);
 
+app.use((err, _req, res, next) => {
+  console.log(err.message);
+  res.status(500).end();
+})
+
 app.listen(PORT, () => {
   console.log(`ON PORT ${PORT}`);
 });

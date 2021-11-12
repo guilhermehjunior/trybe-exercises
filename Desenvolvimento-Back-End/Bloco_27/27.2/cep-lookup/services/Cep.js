@@ -8,11 +8,11 @@ const errors = {
 };
 
 const schema = Joi.object({
-  cep: Joi.not().empty().required(),
-  logradouro: Joi.not().empty().required(),
-  bairro: Joi.not().empty().required(),
-  localidade: Joi.not().empty().required(),
-  uf: Joi.not().empty().required(),
+  cep: Joi.string().empty().required(),
+  logradouro: Joi.string().empty().required(),
+  bairro: Joi.string().empty().required(),
+  localidade: Joi.string().empty().required(),
+  uf: Joi.string().empty().required(),
 });
 
 
@@ -32,7 +32,7 @@ const postCep = async(objeto) => {
   const cepEncontrado = await Cep.getCepByCep(objeto.cep);
   if (cepEncontrado.length !== 0) return { code: 409, error: { code: 'alreadyExists', message: errors.cep_existente} };
   const joiValidation = schema.validate(objeto);
-  if (joiValidation.error) return { code: 400, error: { code: 'invalidData', message: joiValidation.error } };
+  if (joiValidation.error) return { code: 400, error: { code: 'invalidData', message: joiValidation.error.details[0].message } };
   const postedCep = await Cep.postCep(objeto);
   return { code: 201, postedCep };;
 };

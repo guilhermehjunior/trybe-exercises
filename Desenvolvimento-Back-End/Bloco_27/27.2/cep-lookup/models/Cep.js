@@ -7,8 +7,7 @@ const getCepByCep = async (cep) => {
 
 const postCep = async (objeto) => {
   const { cep, logradouro, bairro, localidade, uf } = objeto;
-  const result = await connection().execute('INSERT INTO ceps VALUES(?, ?, ?, ?, ?)', [cep],[logradouro],[bairro],[localidade], [uf]);
-  console.log(result);
+  await connection().execute('INSERT INTO ceps VALUES(?, ?, ?, ?, ?)', [cep, logradouro, bairro, localidade, uf]);
   return objeto;
 };
 
