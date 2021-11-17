@@ -1,12 +1,12 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const mongoConnection = require('../../models/connection');
 const MoviesModel = require('../../models/movieModel');
 
-describre('Procura filme por ID no DB', async () => {
+describe('Procura filme por ID no DB', async () => {
   let connectionMock; 
   const DBServer = new MongoMemoryServer();
   
@@ -27,19 +27,20 @@ describre('Procura filme por ID no DB', async () => {
 
   describe('O filme nao foi encontrado', () => {
     it('espera retornar um array vazio', async () => {
-      const movie = await MoviesModel.getById({id: '604cb554311d68f491ba5781'});
-      expect(movie).to.be.empty;
+      const movie = await MoviesModel.getById('604cb554311d68f491ba5781');
+      expect(movie).to.be.null;
     });
   });
 
 
-  describre('O filme foi encontrado', async () => {
+  describe('O filme foi encontrado', async () => {
+    const ID = '604cb554311d68f491ba5781';
     const expectedMovie = {
-      id: '604cb554311d68f491ba5781',
+      _id: ObjectId(ID),
       title: 'Example Movie',
       directedBy: 'Jane Dow',
       releaseYear: 1999,
-    };  
+    };
     
     before(async () => {
       await connectionMock.collection('movies').insertOne({ ...expectedMovie });
@@ -50,8 +51,8 @@ describre('Procura filme por ID no DB', async () => {
     });
 
     it('espera retornar um array com 1 filme', async () => {
-      const [movie] = await MoviesModel.getById({id: '604cb554311d68f491ba5781'});
-      expect(movie).to.be.deep.equal(expectedMovie);
+      const movie = await MoviesModel.getById(ID);
+      expect(movie).to.include.all.keys('_id','title', 'releaseYear', 'directedBy');
     });
 
   });

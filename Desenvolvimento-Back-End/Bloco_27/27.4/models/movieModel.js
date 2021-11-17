@@ -32,7 +32,8 @@ const create = async ({ title, directedBy, releaseYear }) => {
 
 const getById = async (id) => {
   const db = await mongoConnection.getConnection();
-  const movie = await db.collection('movies').findOne({ _id: ObjectId(id) });
+
+  const movie = await db.collection('movies').findOne({_id: ObjectId(id)});
   return movie;
 };
 
