@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/uploads'));
 
 app.get('/ping', controllers.ping);
+app.post('/upload', middlewares.uploadMulter('file'), controllers.upload);
 
 app.use(middlewares.error);
 
