@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -20,10 +21,10 @@ app.use(
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/uploads'));
+app.use(express.static(path.resolve(__dirname, 'uploads')));
 
 app.get('/ping', controllers.ping);
-app.post('/upload', middlewares.uploadMulter('file'), controllers.upload);
+app.post('/upload', middlewares.uploadMulter.single('file'), controllers.upload);
 
 app.use(middlewares.error);
 
