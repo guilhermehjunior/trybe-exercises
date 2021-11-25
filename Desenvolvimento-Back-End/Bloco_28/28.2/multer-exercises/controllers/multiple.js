@@ -4,5 +4,5 @@ const urlList = (files) => {
 };
 
 module.exports = (req, res, next) => {
-  res.status(200).json(urlList(req.files));
+  res.status(201).json(urlList(req.files));
 };
