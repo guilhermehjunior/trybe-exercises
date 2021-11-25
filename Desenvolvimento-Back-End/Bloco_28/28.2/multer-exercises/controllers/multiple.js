@@ -1,9 +1,5 @@
 const urlList = (files) => {
-  const urls = [];
-  files.forEach((file) => {
-    const url = { file: file.originalname, url: `http://localhost:3000/${file.filename}` };
-    urls.push(url);
-  });
+  const urls = files.map((file) => ({ file: file.originalname, url: `http://localhost:3000/${file.filename}` }));
   return urls;
 };
 
