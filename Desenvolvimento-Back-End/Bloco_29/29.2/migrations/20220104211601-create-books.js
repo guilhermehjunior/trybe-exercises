@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.createTable('Books', {
       id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
@@ -22,6 +22,10 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
