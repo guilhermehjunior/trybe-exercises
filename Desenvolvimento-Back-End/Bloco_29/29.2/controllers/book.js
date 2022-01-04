@@ -9,7 +9,7 @@ bookRouter.post('/', async (req, res) => {
     return res.status(201).json(newBook);
   } catch (e) {
     console.log(e.message);
-    res.status(500).end();
+    res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
@@ -53,7 +53,7 @@ bookRouter.put('/:id', async (req, res) => {
     return res.status(201).json(newBook);
   } catch (e) {
     console.log(e.message);
-    res.status(500).end();
+    res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
