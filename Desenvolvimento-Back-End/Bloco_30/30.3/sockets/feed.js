@@ -4,5 +4,8 @@ module.exports = (io) => {
     socket.on('likePost', (currentLikes) => {
       io.emit('updateLikes', currentLikes+1);
     });
+    socket.on('starPost', (currentStars) => {
+      socket.broadcast.emit('updateStars', currentStars);
+    });
   });
 };
