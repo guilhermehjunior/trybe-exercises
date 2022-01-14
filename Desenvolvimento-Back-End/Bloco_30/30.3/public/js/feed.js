@@ -5,7 +5,6 @@ const likeCount = document.querySelector('#currentLikes');
 
 likeIcon.addEventListener('click', () => {
   let currentLikes = Number(likeCount.innerHTML);
-  console.log(currentLikes);
   socket.emit('likePost', currentLikes);
 });
 
