@@ -141,7 +141,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 19-1: _[Projeto - App de Receitas]()_
 
-## Desenvolvimento Back-end :hourglass_flowing_sand:
+## Desenvolvimento Back-end :white_check_mark:
 
 ##### Bloco 20: Introdução à SQL
 
@@ -154,8 +154,8 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 21: Bancos de dados relacionais
 
 - [X] 21-1: _Funções mais usadas no SQL_
-- [X] 21-2: _Descomplicando JOINs e UNIONs_
-- [X] 21-3: _Stored Routines & Subqueries_
+- [X] 21-2: _Descomplicando JOINs, UNIONs e Subqueries_
+- [X] 21-3: _Stored Routines & Stored Functions_
 - [X] 21-4: _Projeto - Vocabulary Booster_
 
 ##### Bloco 22: Bancos de dados relacionais
@@ -165,7 +165,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 22-2: _Transformando ideias em um modelo de banco de dados - Parte 2_
 - [X] 22-3: _Projeto - One For All_
 
-##### Bloco 23: Introdução - NoSQL
+##### Bloco 23: Introdução Ao MongoDB
 
 - [X] 23-1: _MongoDB - Introdução_
 - [X] 23-2: _Filter Operators_
@@ -184,58 +184,50 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 25-2: _Aggregation Framework - Part 2_
 - [X] 25-3: _Projeto - Aggregations_
 
-##### Bloco 26: Intro - NodeJS
+##### Bloco 26: Introdução ao desenvolvimento WEB com NodeJS
 
 - [X] 26-1: _NodeJS - Introdução_
 - [X] 26-2: _NodeJS - Fluxo Assíncrono_
-- [X] 26-3: _NodeJS - Arquitetura_
-- [X] 26-4: _Projeto - A CLI of Ice and Fire_
+- [X] 26-3: _Testes com NodeJS_
+- [X] 26-4: _Express: HTTP com Node.js_
+- [X] 26-5: _Express: Middlewares_
+- [X] 27-5: _Projeto - Talker Manager_
 
-##### Bloco 27: NodeJS
+##### Bloco 27: NodeJS: Camada de Serviço e Arquitetura Rest e Restful
 
-- [X] 27-1: _Express: HTTP com Node.js_
-- [ ] 27-2: _Arquitetura de Software - IntroduÃ§Ã£o ao MVC_
-- [ ] 27-3: _[Projeto - Cookmaster]()_
+- [X] 27-1: _Arquitetura de Software - Camada de Model_
+- [X] 27-2: _Arquitetura de Software - Camada de Controller e Service_
+- [X] 27-3: _Arquitetura WEB - Rest e Restful_
+- [X] 27-4: _Arquitetura de Software - Testando as Camadas_
+- [X] 27-5: _Projeto - Store Manager_
 
-##### Bloco 28: NodeJS
+##### Bloco 28: Autenticação e Upload de Arquivos
 
-- [ ] 28-1: _Arquitetura de Software - Camada de ServiÃ§o_
-- [ ] 28-2: _Arquitetura web - Rest e Restful_
-- [ ] 28-3: _[Projeto - Store Manager]()_
+- [X] 28-1: _NodeJS - JWT - (JSON Web Token)_
+- [X] 28-2: _Upload de arquivos com 'multer'_
+- [X] 28-3: _NodeJS - Testando APIs com Testes de Integração_
+- [X] 28-4: _Projeto - Cookmaster_
 
-##### Bloco 29: NodeJS
+##### Bloco 29: Arquitetura - SOLID e ORM
 
-- [ ] 29-1: _NodeJS - JWT - (JSON Web Token)_
-- [ ] 29-2: _NodeJS - Upload de arquivos com Multer_
-- [ ] 29-3: _[Projeto - Cookmaster V2]()_
+- [X] 29-1: _Arquitetura - Princípios SOLID_
+- [X] 29-2: _ORM - Interface da aplicação com o banco de dados_
+- [X] 29-2: _ORM - Associations_
+- [X] 29-4: _[Projeto - API de Blogs]_
 
-##### Bloco 30: IntroduÃ§Ã£o - Deploy
+##### Bloco 30: Sockets
 
-- [ ] 30-1: _Infraestrutura - Deploy com Heroku_
-- [ ] 30-2: _Deploy - Gerenciadores de Processos_
-- [ ] 30-3: _[Projeto - Stranger Things]()_
+- [X] 30-1: _Arquitetura de Software - Camada de View_
+- [X] 30-2: _Sockets - TCP/UDP & NET_
+- [X] 30-3: _Sockets - Socket.io_
+- [X] 30-4: _Sockets - Praticando Socket.io_
+- [X] 30-5: _Projeto - Webchat_
 
 ##### Bloco 31: Projeto
 
-- [ ] 31-1: _[Projeto - Trybeer]()_
+- [X] 31-1: _Projeto - App de Delivery)_
 
-##### Bloco 32: Arquitetura de Software
-
-- [ ] 32-1: _Arquitetura - PrincÃ­pios SOLID_
-- [ ] 32-2: _ORM - Interface da aplicaÃ§Ã£o com o banco de dados_
-- [ ] 32-3: _Arquitetura de Software - DDD_
-- [ ] 32-4: _Boas prÃ¡ticas na escrita de testes_
-- [ ] 32-3: _[Projeto - API de Blogs]()_
-
-##### Bloco 33: Sockets
-
-- [ ] 30-1: _Sockets - TCP/UDP & NET_
-- [ ] 30-2: _Sockets - Socket.io_
-- [ ] 30-3: _[Projeto - Webchat]()_
-
-##### Bloco 34: Projeto
-
-- [ ] 34-1: _[Projeto - Trybeer V2]()_
+##### Deployment com HEROKU, aprendido, porém sem exercícios nessa pasta.
 
 ## Ciências da Computaçãoo :hourglass_flowing_sand:
 
