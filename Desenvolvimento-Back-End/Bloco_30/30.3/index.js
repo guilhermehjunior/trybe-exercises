@@ -1,13 +1,9 @@
 const express = require('express');
-const cors = require('cors');
 
 const app = express();
 
 const http = require('http').createServer(app);
 
-app.use(cors());
-
-app.use(express.static(__dirname + '/public'));
 
 const io = require('socket.io')(http, {
   cors: {
@@ -16,11 +12,11 @@ const io = require('socket.io')(http, {
   },
 });
 
-app.get('/', (_req,res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static(__dirname + '/public'));
+
+require('./sockets/feed')(io);
 
 
-app.listen(3000, () => {
+http.listen(3000, () => {
   console.log('Aplicativo online na porta 3000');
 });
