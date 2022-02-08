@@ -63,3 +63,30 @@ totalLatas = calculaTotalLatasTinta(30)
 
 
 print('total de latas:', totalLatas[0], 'total R$:', totalLatas[1])
+
+
+# Exercício 6: Crie uma função que receba os três lado de um triângulo e informe qual o tipo de triângulo formado ou "não é triangulo" , caso não seja possível formar um triângulo.
+
+
+def tipoDeTriangulo(ladoA, ladoB, ladoC):
+    if (
+        ladoA + ladoB < ladoC
+        or ladoA + ladoC < ladoB
+        or ladoB + ladoC < ladoA
+    ):
+        return 'nao eh triangulo'
+    if (ladoA == ladoB == ladoC):
+        return 'triangulo equilatero'
+    if (
+        ladoA == ladoB
+        or ladoB == ladoC
+        or ladoA == ladoC
+    ):
+        return 'triangulo isosceles'
+    return 'triangulo escaleno'
+
+
+print(tipoDeTriangulo(1, 2, 3))
+print(tipoDeTriangulo(1, 1, 1))
+print(tipoDeTriangulo(1, 2, 2))
+print(tipoDeTriangulo(1, 7, 1))
