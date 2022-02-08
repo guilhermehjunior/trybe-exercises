@@ -30,3 +30,18 @@ def squarePrinter(sides):
 
 squarePrinter(4)
 
+
+#Exercício 4: Crie uma função que receba uma lista de nomes e retorne o nome com a maior quantidade de caracteres. Por exemplo, para ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"] , o retorno deve ser "Fernanda" .
+
+def longestName(namesLi):
+    longestName = ''
+    for name in namesLi:
+        if len(name) > len(longestName):
+            longestName = name
+    return longestName
+
+
+names = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]
+
+
+print(longestName(names))
