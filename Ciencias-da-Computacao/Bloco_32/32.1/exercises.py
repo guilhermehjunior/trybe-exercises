@@ -121,3 +121,39 @@ def printTriangle(lines):
 
 
 printTriangle(5)
+
+
+# BOnus3: Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N . Por exemplo, para N = 5 , o valor esperado será 15 .
+
+
+def somaDe1aN(n):
+    index = 1
+    soma = 0
+    while index <= n:
+        soma += index
+        index += 1
+    return soma
+
+
+print(somaDe1aN(3))
+
+
+# BOnus4: Escreva uma função que receba o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A - álcool, G - gasolina), e retorne o valor a ser pago pelo cliente, sabendo-se que o preço do litro da gasolina é R$ 2,50, e o preço do litro do álcool é R$ 1,90.
+
+
+def valorTotalCombustivel(litros, tipo):
+    total = 0
+    if tipo == 'G':
+        if litros <= 20:
+            total = litros * 0.97 * 2.5
+        else:
+            total = litros * 0.95 * 2.5
+    elif tipo == 'A':
+        if litros <= 20:
+            total = litros * 0.96 * 1.9
+        else:
+            total = litros * 0.94 * 1.9
+    return total
+
+
+print(valorTotalCombustivel(20, 'G'))
