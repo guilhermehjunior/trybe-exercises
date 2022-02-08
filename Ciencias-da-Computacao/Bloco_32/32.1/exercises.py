@@ -1,3 +1,6 @@
+import math
+
+
 # Exercício 1: Crie uma função que receba dois números e retorne o maior deles.
 def maior(intA, intB):
     if intA > intB:
@@ -45,3 +48,18 @@ names = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]
 
 
 print(longestName(names))
+
+
+# Exercício 5: Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00. Crie uma função que retorne dois valores em uma tupla contendo a quantidade de latas de tinta a serem compradas e o preço total a partir do tamanho de uma parede(em m²).
+
+
+def calculaTotalLatasTinta(tamanho):
+    litros = math.ceil(tamanho / 3)
+    latas = math.ceil(litros / 18)
+    return (latas, latas * 80)
+
+
+totalLatas = calculaTotalLatasTinta(30)
+
+
+print('total de latas:', totalLatas[0], 'total R$:', totalLatas[1])
