@@ -62,7 +62,7 @@ def calculaTotalLatasTinta(tamanho):
 totalLatas = calculaTotalLatasTinta(30)
 
 
-print('total de latas:', totalLatas[0], 'total R$:', totalLatas[1])
+print(f'total de latas:{totalLatas[0]} e total R$: {totalLatas[1]}')
 
 
 # Exercício 6: Crie uma função que receba os três lado de um triângulo e informe qual o tipo de triângulo formado ou "não é triangulo" , caso não seja possível formar um triângulo.
@@ -94,6 +94,8 @@ print(tipoDeTriangulo(1, 7, 1))
 
 # Bonus1: Dada uma lista, descubra o menor elemento. Por exemplo, [5, 9, 3, 19, 70, 8, 100, 2, 35, 27] deve retornar 2 .
 
+# da pra usar funcao min
+
 lista = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]
 
 
@@ -106,3 +108,16 @@ def menorNumeroDaLista(list):
 
 
 print(menorNumeroDaLista(lista))
+
+
+# Bonus2: Faça um programa que, dado um valor n qualquer, tal que n > 1 , imprima na tela um triângulo retângulo com n asteriscos de base. Por exemplo, para n = 5 o triângulo terá 5 asteriscos na base:
+
+
+def printTriangle(lines):
+    index = 1
+    while index < lines + 1:
+        print(index * '*')
+        index += 1
+
+
+printTriangle(5)
