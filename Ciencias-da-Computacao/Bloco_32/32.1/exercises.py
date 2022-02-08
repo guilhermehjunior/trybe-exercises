@@ -21,7 +21,7 @@ def mediaAritimetica(list):
 
 print(mediaAritimetica([1, 2, 3]))
 
-#Exercício 3: Faça um programa que, dado um valor n qualquer, tal que n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n . Por exemplo:
+# Exercício 3: Faça um programa que, dado um valor n qualquer, tal que n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n . Por exemplo:
 
 
 def squarePrinter(sides):
@@ -34,7 +34,7 @@ def squarePrinter(sides):
 squarePrinter(4)
 
 
-#Exercício 4: Crie uma função que receba uma lista de nomes e retorne o nome com a maior quantidade de caracteres. Por exemplo, para ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"] , o retorno deve ser "Fernanda" .
+# Exercício 4: Crie uma função que receba uma lista de nomes e retorne o nome com a maior quantidade de caracteres. Por exemplo, para ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"] , o retorno deve ser "Fernanda" .
 
 def longestName(namesLi):
     longestName = ''
@@ -90,3 +90,19 @@ print(tipoDeTriangulo(1, 2, 3))
 print(tipoDeTriangulo(1, 1, 1))
 print(tipoDeTriangulo(1, 2, 2))
 print(tipoDeTriangulo(1, 7, 1))
+
+
+# Bonus1: Dada uma lista, descubra o menor elemento. Por exemplo, [5, 9, 3, 19, 70, 8, 100, 2, 35, 27] deve retornar 2 .
+
+lista = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]
+
+
+def menorNumeroDaLista(list):
+    menorNumero = list[0]
+    for numero in list:
+        if numero < menorNumero:
+            menorNumero = numero
+    return menorNumero
+
+
+print(menorNumeroDaLista(lista))
