@@ -1,36 +1,31 @@
+import json
 import random
-words = []
-with open('palavras.txt', 'r') as file:
-    words = file.read().split()
 
 
-def random_word(palavras):
-    return random.choice(palavras)
+def import_pokemons():
+    with open('pokemons.json', 'r') as file:
+        content = json.load(file)['results']
+        pokemons = []
+        for pokemon in content:
+            pokemons.append(pokemon['name'])
+        return pokemons
 
 
-def scramble_word(palavra):
-    return "".join(random.sample(palavra, len(palavra)))
+def randomizePokemon(pokemons):
+    return random.choice(pokemons)
 
 
-def guesses():
-    chutes = []
-    index = 0
-    while index < 3:
-        chutes.append(input('Qual a palavra embaralhada?'))
-        index += 1
-    return chutes
-
-
-def main(palavras):
-    palavra_escolhida = random_word(palavras)
-    palavra_embaralhada = scramble_word(palavra_escolhida)
-    print(palavra_embaralhada)
-    chutes = guesses()
-    if palavra_escolhida in chutes:
-        print(f'Ganhou! A palavra era {palavra_escolhida}')
-    else:
-        print(f'Errou! A palavra era {palavra_escolhida}')
+def main():
+    pokemons = import_pokemons()
+    random_pokemon = randomizePokemon(pokemons)
+    for letter in range(len(random_pokemon)):
+        guess = input('Adivinhe o Pokemon')
+        if guess == random_pokemon:
+            return print(f'Acertou! O pokemon era {random_pokemon}')
+        for index in range(letter + 1):
+            print(random_pokemon[index], end="")
+        print()
 
 
 if __name__ == "__main__":
-    main(words)
+    main()

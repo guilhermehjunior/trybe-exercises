@@ -52,3 +52,47 @@ def main(palavras):
 
 if __name__ == "__main__":
     main(words)
+
+
+# Exercício 4: Dado o seguinte arquivo no formato JSON , leia seu conteúdo e calcule a porcentagem de livros em cada categoria, em relação ao número total de livros. O resultado deve ser escrito em um arquivo no formato CSV como o exemplo abaixo.
+
+import json
+
+with open('livros.json', 'r') as file:
+    content = json.load(file)
+    for line in content:
+        print(content[0])
+
+# Utilizando o arquivo pokemons.json , vamos escrever um programa que sorteie um pokemon aleatoriamente. O programa deve perguntar à pessoa usuária "Quem é esse pokemon?", até que ela o acerte. A cada erro, apresente um número de letras do nome daquele pokemon igual ao número de erros.
+
+import json
+import random
+
+
+def import_pokemons():
+    with open('pokemons.json', 'r') as file:
+        content = json.load(file)['results']
+        pokemons = []
+        for pokemon in content:
+            pokemons.append(pokemon['name'])
+        return pokemons
+
+
+def randomizePokemon(pokemons):
+    return random.choice(pokemons)
+
+
+def main():
+    pokemons = import_pokemons()
+    random_pokemon = randomizePokemon(pokemons)
+    for letter in range(len(random_pokemon)):
+        guess = input('Adivinhe o Pokemon')
+        if guess == random_pokemon:
+            return print(f'Acertou! O pokemon era {random_pokemon}')
+        for index in range(letter + 1):
+            print(random_pokemon[index], end="")
+        print()
+
+
+if __name__ == "__main__":
+    main()
