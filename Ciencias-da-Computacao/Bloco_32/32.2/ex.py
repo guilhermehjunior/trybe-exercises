@@ -86,12 +86,13 @@ def main():
     pokemons = import_pokemons()
     random_pokemon = randomizePokemon(pokemons)
     for letter in range(len(random_pokemon)):
-        guess = input('Adivinhe o Pokemon')
+        guess = input('Adivinhe o Pokemon: ')
         if guess == random_pokemon:
             return print(f'Acertou! O pokemon era {random_pokemon}')
         for index in range(letter + 1):
             print(random_pokemon[index], end="")
         print()
+    print(f'O pokemon era {random_pokemon}')
 
 
 if __name__ == "__main__":
