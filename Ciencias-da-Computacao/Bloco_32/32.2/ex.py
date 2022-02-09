@@ -17,7 +17,9 @@ if __name__ == "__main__":
 
 
 import random
-words = ["abutre", "cachorro", "asterix", "sistema"]
+words = []
+with open('palavras.txt', 'r') as file:
+    words = file.read().split()
 
 
 def random_word(palavras):

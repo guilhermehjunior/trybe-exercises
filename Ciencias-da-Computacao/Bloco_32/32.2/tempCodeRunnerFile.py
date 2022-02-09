@@ -1,5 +1,7 @@
 import random
-words = ["abutre", "cachorro", "asterix", "sistema"]
+words = []
+with open('palavras.txt', 'r') as file:
+    words = file.read().split()
 
 
 def random_word(palavras):
@@ -24,10 +26,10 @@ def main(palavras):
     palavra_embaralhada = scramble_word(palavra_escolhida)
     print(palavra_embaralhada)
     chutes = guesses()
-    for chute in chutes:
-        if chute == palavra_escolhida:
-            return print(f'Ganhou! A palavra era {palavra_escolhida}')
-    print(f'Errou! A palavra era {palavra_escolhida}')
+    if palavra_escolhida in chutes:
+        print(f'Ganhou! A palavra era {palavra_escolhida}')
+    else:
+        print(f'Errou! A palavra era {palavra_escolhida}')
 
 
 if __name__ == "__main__":
