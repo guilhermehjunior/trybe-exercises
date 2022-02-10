@@ -14,6 +14,3 @@ def verifies_if_emails_on_list_are_ok(lista):
         else:
             valid_emails.append(email)
     return valid_emails
-
-
-print(verifies_if_emails_on_list_are_ok(emails))
