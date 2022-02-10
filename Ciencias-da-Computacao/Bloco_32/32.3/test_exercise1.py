@@ -1,4 +1,4 @@
-from exercises import fizz3Buzz5
+from exercise1 import fizz3Buzz5
 import pytest
 
 string = "'<=' not supported between instances of 'int' and 'str'"
