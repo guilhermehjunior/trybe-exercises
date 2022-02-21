@@ -15,3 +15,14 @@ novo_retangulo = Retangulo(4, 2)
 
 print(novo_retangulo.area())
 print(novo_retangulo.perimetro())
+
+
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def area(self):
+        return 3.14 * (self.radio ** 2)
+
+    def perimetro(self):
+        return 2 * 3.14 * self.radio
