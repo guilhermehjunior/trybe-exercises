@@ -26,3 +26,22 @@ class Circulo:
 
     def perimetro(self):
         return 2 * 3.14 * self.radio
+
+
+class Televisao:
+    def __init__(self, state, volume, channel):
+        self.state = state
+        self.volume = volume
+        self.channel = channel
+
+    def change_state(self):
+        self.state = not self.state
+
+    def volume_up(self):
+        self.volume += 1
+
+    def volume_down(self):
+        self.volume -= 1
+
+    def change_channel(self, new_channel):
+        self.channel = new_channel
