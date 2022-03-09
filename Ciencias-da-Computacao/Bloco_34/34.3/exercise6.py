@@ -1,4 +1,3 @@
-from array import array
 from pymongo import MongoClient
 
 
