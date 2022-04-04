@@ -1,6 +1,7 @@
 class Stack():
-    def __init__(self):
+    def __init__(self, limit):
         self._data = list()
+        self._max_size = limit
 
     def size(self):
         return len(self._data)
@@ -8,7 +9,10 @@ class Stack():
     def is_empty(self):
         return not bool(self.size())
 
+    # ex2
     def push(self, value):
+        if len(self._data) == self._max_size:
+            raise OverflowError("tamanho da lista excedeu o limite")
         self._data.append(value)
 
     def pop(self):
