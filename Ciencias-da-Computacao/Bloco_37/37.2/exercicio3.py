@@ -12,15 +12,13 @@ class Parking():
         next_car = ''
         outside_cars = Stack(14)
         while next_car != car:
-            outside_cars.push(self.stack.peek())
-            self.stack.pop()
+            outside_cars.push(self.stack.pop())
             next_car = self.stack.peek()
             if next_car == car:
                 self.stack.pop()
 
         for _ in range(outside_cars.size()):
-            self.stack.push(outside_cars.peek())
-            outside_cars.pop()
+            self.stack.push(outside_cars.pop())
 
     def print(self):
         return print(self.stack)
